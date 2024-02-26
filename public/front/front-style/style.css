@@ -1,0 +1,272 @@
+*{
+    font-family: "Ubuntu", sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 120px;
+    padding: 30px;
+    margin: 0 2.5%;
+}
+.navbar-brand img{
+    width: 180px;
+}
+.nav-link{
+    display: flex;
+    margin-right: 20px;
+    list-style: none;
+}
+.nav-link a{
+    color: #0155c2;
+    font-size: 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 30px;
+    text-decoration: none;
+}
+.nav-link a:hover{
+    color: #ff7a00;
+    text-decoration: underline;
+}
+.body{
+   margin: 0 3%;
+   align-items: center;
+   justify-content: center;
+}
+.carousel-inner{
+    width: 100%;
+    height: 680px;
+    border-radius: 20px;
+}
+.carousel-inner img{
+    height: 680px;
+}
+.body-cards{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.body-cards .card{
+    height: 210px;
+    padding: 10px;
+    margin: 20px 40px 20px 0;
+    border-top: 1px solid #ff7a00;
+    border-left: 1px solid #ff7a00;
+    border-right: 1px solid #0155c2;
+    border-bottom: 1px solid #0155c2;
+}
+.card i{
+    font-size: 40px;
+    color: #0155c2;
+}
+.card h5{
+    color: #0155c2;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.card p{
+    color: #ff7a00;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+}
+.statement{
+    display: flex;
+    padding: 20px 0;
+    padding-bottom: 20px;
+}
+.statement .msg{
+    padding: 20px;
+}
+.statement h5{
+    color: #0155c2;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;  
+    line-height: -20px; 
+}
+.statement p{
+    color: #ff7a00;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    line-height: -20px;
+}
+.smart{
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    padding: 20px ;
+    background-color: whitesmoke;
+    padding-bottom: 20px;
+}
+.smart-img{
+    width: 50%;
+}
+.smart-img img{
+    width: 550px;
+}
+.smart-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.smart-info h2{
+    color: #0155c2;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 45px;
+}
+.smart-info h3{
+    color: #0155c2;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;
+}
+.smart-info .h3-bck{
+    background-color: #ff7a00;
+    border-radius: 20px;
+    padding: 10px;
+}
+.smart-info p{
+    color: #ff7a00;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    line-height: -20px;
+}
+.smart-info ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    list-style: none;
+}
+.smart-info ul li{
+    text-decoration: none;
+    font-size: 35px;
+    color: #ff7a00;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 500;
+    line-height: -20px;
+}
+.smart-info ul li i{
+    color: #0155c2;
+    padding-right: 10px;
+}
+.gbras-footer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    background-color: whitesmoke;
+}
+.gbras-footer .footer-logo{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 400px;
+}
+.gbras-footer .footer-logo img{
+    width: 300px;
+    margin-bottom: 20px;
+}
+.gbras-footer .footer-logo .social-icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.gbras-footer .footer-logo .social-icon i{
+    color: #ff7a00;
+    margin: 3px;
+}
+.gbras-footer .footer-logo .social-icon i:hover{
+    color: #0155c2;
+}
+.gbras-footer .footer-support{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 400px;
+}
+.gbras-footer .footer-about{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 400px;
+}
+.gbras-footer .footer-email{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 500px;
+}
+.gbras-footer .footer-support .head{
+    color: #0155c2;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+.gbras-footer .footer-support p{
+    color: #ff7a00;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+.gbras-footer .footer-about .head{
+    color: #0155c2;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+.gbras-footer .footer-about p{
+    color: #ff7a00;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+.gbras-footer .footer-email p{
+    color: #0155c2;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.gbras-footer .footer-email input{
+    width: 300px;
+    height: 45px;
+    border: 1px solid #ff7a00;
+    padding: 0 10px;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 300;
+}
+.gbras-footer .footer-email button{
+    width: 90px;
+    background-color: #ff7a00;
+    padding: 10px;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 300;
+}
+.gbras-footer .footer-email button:hover{
+    background-color: transparent;
+    outline: #ff7a00;
+    color: #ff7a00;
+}
