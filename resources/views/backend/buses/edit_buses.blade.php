@@ -75,7 +75,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Bus Condition</label>
                             <input type="text" class="form-control @error('condition') is-invalid @enderror" 
                             name="condition" value="{{$data->condition}}">
@@ -87,6 +87,30 @@
                             <label for="exampleInputUsername1"  class="form-label"> Bus Status</label>
                             <input type="text" class="form-control @error('status') is-invalid @enderror" 
                             name="status" value="{{$data->status}}">
+                            @error('status')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div> --}}
+
+                        <div class="mb-3">
+                            <label for="exampleInputUsername1"  class="form-label">Bus Condition</label>
+                            <Select type="text" class="form-control @error('condition') is-invalid @enderror" 
+                            name="condition" >
+                            <option value="operational" @if($data->condition == 'operational') selected @endif>Operation</option>
+                            <option value="maintanance" @if($data->condition == 'maintanance') selected @endif>Maintanance</option>
+                            <option value="damaged" @if($data->condition == 'damaged') selected @endif>Damaged</option>
+                            </Select>
+                            @error('condition')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputUsername1"  class="form-label">Bus Status</label>
+                            <Select type="text" class="form-control @error('status') is-invalid @enderror" 
+                            name="status" >
+                            <option value="available" @if($data->status == 'available') selected @endif>Available</option>
+                            <option value="not-available" @if($data->status == 'not-available') selected @endif>Not Available</option>
+                            </Select>
                             @error('status')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
