@@ -9,15 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 class BusController extends Controller
 {
+    // START METHOD
     public function AllBuses(){
         $all_buses = Bus::latest()->get();
         return view('backend.buses.all_buses',compact('all_buses'));
     }//END METHOD
 
+    // START METHOD
     public function AddBuses(){
         return view('backend.buses.add_buses');
     }//END METHOD
 
+    // START METHOD
     public function StoreBuses(Request $request){
         //VAIDATION
         $request->validate([
@@ -52,21 +55,14 @@ class BusController extends Controller
         return redirect()->route('all.bus')->with($notification);
     }//END METHOD 
 
+    // START METHOD
     public function EditBuses(Request $request){
         $data = Bus::findOrFail($request->id);
         return view('backend.buses.edit_buses',compact('data'));
     }//END METHOD
 
+    // START METHOD
     public function UpdateBuses(Request $request){
-        
-        $request->validate([
-            'reg_number' => ['required', 'unique:App\Models\Bus,reg_number', 'max:10'],
-            'capacity' => 'numeric | required | max:200',
-            'model' => 'required | max:122',
-            'make' => 'required | max:122',
-            'year' => 'max:4',
-            'color' => 'max:122',
-        ]);
 
         $bid = $request->id;
 
@@ -88,5 +84,20 @@ class BusController extends Controller
         
 
         return redirect()->route('all.bus')->with($notification);
+   }// END METHOD
+
+   // START METHOD
+   public function DeleteBus(Request $request){
+    $bid = $request->id;
+    Bus::findOrFail($bid)->delete();
+
+    $notification = array(
+        'message' => 'Bus Deleted Successfully',
+        'alert-type' => 'success'
+    );
+    
+
+    return redirect()->back()->with($notification);
+        
    }
 }

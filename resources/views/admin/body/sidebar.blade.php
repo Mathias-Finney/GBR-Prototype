@@ -21,8 +21,8 @@
         <li class="nav-item nav-category">BUSES</li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
-            {{-- <i class="link-icon" data-feather="bus-front"></i> --}}
-            <i class="link-icon bi bi-bus-front"></i>
+            <i class="link-icon" data-feather="life-buoy"></i>
+           
             <span class="link-title">BUS</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
             </a>

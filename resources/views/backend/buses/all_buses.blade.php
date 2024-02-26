@@ -42,7 +42,7 @@
                 <td>{{ $item->status }}</td>
                 <td>
                     <a class="btn btn-inverse-warning" href="{{ route('edit.buses', $item->id) }}">Edit</a>
-                    <a class="btn btn-inverse-danger" href="{{ route('update.buses', $item->id) }}">Delete</a>
+                    <a class="btn btn-inverse-danger" id="delete" href="{{ route('delete.bus', $item->id) }}">Delete</a>
                 </td>
             </tr>
             @endforeach

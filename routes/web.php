@@ -68,6 +68,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::post('/store/buses', 'StoreBuses')->name('store.buses');
         Route::get('/edit/bus/{id}', 'EditBuses')->name('edit.buses');
         Route::post('/update/bus', 'UpdateBuses')->name('update.buses');
+        Route::get('/delete/bus/{id}', 'DeleteBus')->name('delete.bus');
 
     });
 });
