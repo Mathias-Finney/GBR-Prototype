@@ -18,15 +18,22 @@ use App\Http\Controllers\Backend\BusController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/userlogin', function () {
+    return view('frontend.register');
 });
 // User Frontend All Route
-Route::get('/home', [UserController::class, 'Index'])->name('homepage');
+Route::get('/', [UserController::class, 'Index'])->name('homepage');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile.edituser');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

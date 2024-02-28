@@ -12,23 +12,9 @@
     <title>Online TIcket</title>
 </head>
 <body>
-    <nav class="navbar-brand">
-        <a href="#"><img src="{{ asset('front/images/G-BRaS LOGO@2x.png')}}" alt="logo"></a>
-        <div class="links">
-            <ul class="nav-link">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Routes</a></li>
-                <li><a href="#">Track Parcel</a></li>
-                <li><a href="#">Bus Hiring</a></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
-        </div>
-        <sign-ins>
-            <button class="btn btn-outline-danger btn-lg">LOGIN</button>
-            <button class="btn btn-primary btn-lg">Sign UP</button>
-        </sign-ins>
-    </nav>
-    <div class="body">
+    @include('layouts.navbar')
+    @include('layouts.toast')
+    <div class="body mt-2">
         <!-- carousel cards -->
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
