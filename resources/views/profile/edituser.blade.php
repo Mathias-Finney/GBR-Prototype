@@ -220,6 +220,16 @@
         </form>
       </div>
     </div>
+    <div class="text-center mt-5 ">
+      <form method="POST" action="{{ route('profile.destroy')}}">
+        @csrf
+        @method('DELETE')
+
+        <button class="btn btn-outline-danger  w-50" type="submit">
+          Delete Account
+        </button>
+      </form>
+    </div>
   </div>
      
     
