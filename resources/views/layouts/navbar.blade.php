@@ -1,19 +1,3 @@
-{{-- <nav class="navbar-brand shadow">
-    <a href="#"><img src="{{ asset('front/images/G-BRaS LOGO@2x.png')}}" alt="logo"></a>
-    <div class="links">
-        <ul class="nav-link">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Routes</a></li>
-            <li><a href="#">Track Parcel</a></li>
-            <li><a href="#">Bus Hiring</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
-    </div>
-    <sign-ins>
-        <a href="{{ route('login') }}"><button class="btn btn-outline-danger btn-lg">LOGIN</button></a>
-        <a href="{{ route('register')}}"><button class="btn btn-outline-primary btn-lg">Sign UP</button></a>
-    </sign-ins>
-</nav> --}}
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow" >
         <div class="container-fluid">
@@ -54,9 +38,7 @@
                 </li>
                 @endguest
                 @auth
-                {{-- <li class="nav-item icon">
-                    <a class="nav-link active ps-1 pe-3 border-rounded-circle" aria-current="page" href="#"><img src="buslogo.png" /></a>
-                </li> --}}
+               
                 <li class="nav-item dropdown me-5">
                     <a class="nav-link dropdown-toggle ps-1 pe-3 border-rounded-circle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="buslogo.png" />
