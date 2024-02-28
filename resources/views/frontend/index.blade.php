@@ -97,7 +97,7 @@
             </div>
             <div class="smart-info">
                 <h2>Smart journey, stay hassle-free. </h2>
-                <h3 class="h3-bck">Download the STC Travel app!</h3>
+                <h3 class="h3-bck">Download the G-BRaS Travel app!</h3>
                 <p>Ride in convenience with the exclusive features of mobile app,
                     including: </p>
                 <ul>
@@ -108,7 +108,7 @@
                     </ul>
                 <p>You don't want to complain every time you set out for a trip.
                     Put an end to your daily commuting sufferings. </p>
-                    <h2>Experience STC!</h2>
+                    <h2>Experience G-BRaS!</h2>
             </div>
         </div>   
 
