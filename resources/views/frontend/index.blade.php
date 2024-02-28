@@ -12,7 +12,7 @@
     <title>Online TIcket</title>
 </head>
 <body>
-    <nav class="navbar-brand">
+    {{-- <nav class="navbar-brand shadow">
         <a href="#"><img src="{{ asset('front/images/G-BRaS LOGO@2x.png')}}" alt="logo"></a>
         <div class="links">
             <ul class="nav-link">
@@ -24,11 +24,12 @@
             </ul>
         </div>
         <sign-ins>
-            <button class="btn btn-outline-danger btn-lg">LOGIN</button>
-            <button class="btn btn-primary btn-lg">Sign UP</button>
+            <a href="{{ route('login') }}"><button class="btn btn-outline-danger btn-lg">LOGIN</button></a>
+            <a href="{{ route('register')}}"><button class="btn btn-outline-primary btn-lg">Sign UP</button></a>
         </sign-ins>
-    </nav>
-    <div class="body">
+    </nav> --}}
+    @include('layouts.navbar')
+    <div class="body mt-2">
         <!-- carousel cards -->
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">

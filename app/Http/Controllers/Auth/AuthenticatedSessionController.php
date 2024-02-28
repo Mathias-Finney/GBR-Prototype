@@ -25,6 +25,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -35,10 +36,12 @@ class AuthenticatedSessionController extends Controller
         }elseif($request->user()->role === 'agent'){
             $url = 'agent/dashboard';
         }elseif($request->user()->role === 'user'){
-            $url = '/dashboard';
+            $url = '/';
         }
 
         return redirect()->intended($url);
+
+       
     }
 
     /**
