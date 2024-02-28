@@ -39,7 +39,8 @@ class AuthenticatedSessionController extends Controller
             $url = '/';
         }
 
-        return redirect()->intended($url);
+        session()->flash('status', true);
+        return redirect()->intended($url)->with(['status' => 'success','message' => 'login successful']);
 
        
     }
@@ -55,6 +56,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        session()->flash('status', true);
+        return redirect('/')->with(['status' => 'success','message' => 'logout successful']);
     }
 }

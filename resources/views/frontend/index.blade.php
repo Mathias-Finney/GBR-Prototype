@@ -13,6 +13,7 @@
 </head>
 <body>
     @include('layouts.navbar')
+    @include('layouts.toast')
     <div class="body mt-2">
         <!-- carousel cards -->
         <div id="carouselExample" class="carousel slide">

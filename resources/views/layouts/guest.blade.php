@@ -78,6 +78,8 @@
 <body>
     <div class="">
     @include('layouts.navbar')
+
+    @include('layouts.toast')
     {{ $slot }}
     
     </div>
