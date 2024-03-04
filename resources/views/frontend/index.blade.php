@@ -12,23 +12,9 @@
     <title>Online TIcket</title>
 </head>
 <body>
-    <nav class="navbar-brand">
-        <a href="#"><img src="{{ asset('front/images/G-BRaS LOGO@2x.png')}}" alt="logo"></a>
-        <div class="links">
-            <ul class="nav-link">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Routes</a></li>
-                <li><a href="#">Track Parcel</a></li>
-                <li><a href="#">Bus Hiring</a></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
-        </div>
-        <sign-ins>
-            <button class="btn btn-outline-danger btn-lg">LOGIN</button>
-            <button class="btn btn-primary btn-lg">Sign UP</button>
-        </sign-ins>
-    </nav>
-    <div class="body">
+    @include('layouts.navbar')
+    @include('layouts.toast')
+    <div class="body mt-2">
         <!-- carousel cards -->
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -111,7 +97,7 @@
             </div>
             <div class="smart-info">
                 <h2>Smart journey, stay hassle-free. </h2>
-                <h3 class="h3-bck">Download the STC Travel app!</h3>
+                <h3 class="h3-bck">Download the G-BRaS Travel app!</h3>
                 <p>Ride in convenience with the exclusive features of mobile app,
                     including: </p>
                 <ul>
@@ -122,7 +108,7 @@
                     </ul>
                 <p>You don't want to complain every time you set out for a trip.
                     Put an end to your daily commuting sufferings. </p>
-                    <h2>Experience STC!</h2>
+                    <h2>Experience G-BRaS!</h2>
             </div>
         </div>   
 
