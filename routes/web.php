@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TerminalController;
 use App\Http\Controllers\Backend\BusController;
 
 /*
@@ -69,6 +71,26 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/edit/bus/{id}', 'EditBuses')->name('edit.buses');
         Route::post('/update/bus', 'UpdateBuses')->name('update.buses');
         Route::get('/delete/bus/{id}', 'DeleteBus')->name('delete.bus');
+
+    });
+    //Regions Controller
+    Route::controller(RegionController::class)->group(function(){
+        Route::get('/all/reg', 'AllReg')->name('all.reg');
+        Route::get('/add/reg', 'AddReg')->name('add.reg');
+        Route::post('/store/reg', 'StoreReg')->name('store.reg');
+        Route::get('/edit/reg/{id}', 'EditReg')->name('edit.reg');
+        Route::post('/update/reg', 'UpdateReg')->name('update.reg');
+        Route::get('/delete/reg/{id}', 'DeleteReg')->name('delete.reg');
+
+    });
+    //Terminals Controller
+    Route::controller(TerminalController::class)->group(function(){
+        Route::get('/all/tem', 'AllTem')->name('all.tem');
+        Route::get('/add/tem', 'AddTem')->name('add.tem');
+        Route::post('/store/tem', 'StoreTem')->name('store.tem');
+        Route::get('/edit/tem/{id}', 'EditTem')->name('edit.tem');
+        Route::post('/update/tem', 'UpdateTem')->name('update.tem');
+        Route::get('/delete/tem/{id}', 'DeleteTem')->name('delete.tem');
 
     });
 });

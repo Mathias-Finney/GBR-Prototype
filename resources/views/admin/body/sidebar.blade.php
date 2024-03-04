@@ -38,6 +38,46 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item nav-category">REGIONS</li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+            <i class="link-icon" data-feather="life-buoy"></i>
+           
+            <span class="link-title">REGIONS</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="emails">
+                <ul class="nav sub-menu">
+                    <li class="nav-item">
+                    <a href="{{ route('all.reg') }}" class="nav-link">All Regions</a> 
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ route('add.reg') }}" class="nav-link">Add Region</a>
+                    </li>
+                    {{-- we can add more if needed --}}
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item nav-category">TERMINALS</li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+            <i class="link-icon" data-feather="life-buoy"></i>
+           
+            <span class="link-title">TERMINALS</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="emails">
+                <ul class="nav sub-menu">
+                    <li class="nav-item">
+                    <a href="{{ route('all.tem') }}" class="nav-link">All Terminals</a> 
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ route('add.tem') }}" class="nav-link">Add Terminal</a>
+                    </li>
+                    {{-- we can add more if needed --}}
+                </ul>
+            </div>
+        </li>
         <li class="nav-item">
             <a href="pages/apps/calendar.html" class="nav-link">
             <i class="link-icon" data-feather="calendar"></i>
