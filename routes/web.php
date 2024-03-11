@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\DriverController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerminalController;
@@ -102,6 +104,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/delete/teminal/{id}', 'DeleteTem')->name('delete.tem');
 
     });
+
     //Routes Controller
     Route::controller(RouteController::class)->group(function(){
         Route::get('/all/route', 'AllRoute')->name('all.route');
@@ -110,6 +113,28 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/edit/route/{id}', 'EditRoute')->name('edit.route');
         Route::post('/update/route', 'UpdateRoute')->name('update.route');
         Route::get('/delete/route/{id}', 'DeleteRoute')->name('delete.route');
+
+    });
+
+    //Driver Controller
+    Route::controller(DriverController::class)->group(function(){
+        Route::get('/all/drivers', 'AllDriver')->name('all.driver');
+        Route::get('/add/driver', 'AddDriver')->name('add.driver');
+        Route::post('/store/driver', 'StoreDriver')->name('store.driver');
+        Route::get('/edit/driver/{id}', 'EditDriver')->name('edit.driver');
+        Route::post('/update/driver', 'UpdateDriver')->name('update.driver');
+        Route::get('/delete/driver/{id}', 'DeleteDriver')->name('delete.driver');
+
+    });
+
+    //Payment Controller
+    Route::controller(PaymentController::class)->group(function(){
+        Route::get('/all/payments', 'AllPayment')->name('all.payment');
+        Route::get('/add/payment', 'AddPayment')->name('add.payment');
+        Route::post('/store/payment', 'StorePayment')->name('store.payment');
+        Route::get('/edit/payment/{id}', 'EditPayment')->name('edit.payment');
+        Route::post('/update/payment', 'UpdatePayment')->name('update.payment');
+        Route::get('/delete/payment/{id}', 'DeletePayment')->name('delete.payment');
 
     });
 });

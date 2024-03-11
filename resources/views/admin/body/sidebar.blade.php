@@ -68,17 +68,29 @@
             </a>
             <div class="collapse" id="emails">
                 <ul class="nav sub-menu">
+                    {{-- terminal links --}}
                     <li class="nav-item">
-                    <a href="{{ route('all.tem') }}" class="nav-link">All Terminals</a> 
+                    <a href="{{ route('all.tem') }}" class="nav-link">Terminals</a> 
                     </li>
+                    
+                    {{-- Route links --}}
                     <li class="nav-item">
-                    <a href="{{ route('add.tem') }}" class="nav-link">Add Terminal</a>
+                    <a href="{{ route('all.route') }}" class="nav-link">Routes</a> 
                     </li>
+                    
+                    {{-- driver link --}}
                     <li class="nav-item">
-                    <a href="{{ route('all.route') }}" class="nav-link">All Routes</a> 
+                    <a href="{{ route('all.driver') }}" class="nav-link">Driver</a> 
                     </li>
+                    
+                    {{-- payment --}}
                     <li class="nav-item">
-                    <a href="{{ route('add.route') }}" class="nav-link">Add Route</a>
+                        <a href="{{ route('all.payment') }}" class="nav-link">Payments</a> 
+                    </li>
+
+                    {{-- Travels --}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Trips</a> 
                     </li>
                     
                 </ul>
