@@ -65,7 +65,13 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    
+                    <div class="col-12">
+                        <label for="contact_email" class="form-label">Contact Email<a style="color: red;"> *</a></label>
+                        <input type="text" name="contactEmail" class="form-control {{ $errors->has('contactEmail') ? 'is-invalid' : 'border-primary' }}" id="contact_email" placeholder="" value="{{old('contactEmail')}}">
+                        @error('contactEmail')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <div class="col-6">
                         <label for="from_location" class="form-label">Begining Location<a style="color: red;"> *</a></label>
                         <input type="text" name="fromLocation" class="form-control {{ $errors->has('fromLocation') ? 'is-invalid' : 'border-primary' }}" id="from_location" placeholder="" value="{{old('fromLocation')}}">
