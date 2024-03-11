@@ -8,6 +8,7 @@ use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerminalController;
 use App\Http\Controllers\Backend\BusController;
+use App\Http\Controllers\BusHiringController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,10 @@ Route::get('/', [UserController::class, 'Index'])->name('homepage');
 Route::get('/routes', [UserController::class, 'Route'])->name('routepage');
 Route::get('/busHiring', [UserController::class, 'BusHiring'])->name('busHiring');
 Route::get('/aboutus', [UserController::class, 'AboutUs'])->name('aboutUs');
+
+
+// Bus Hiring Frontend 
+Route::post('/busHire', [BusHiringController::class, 'StoreBusesHiring'])->name('user.store.busHiring');
 
 Route::get('/dashboard', function () {
     return view('profile.edituser');
