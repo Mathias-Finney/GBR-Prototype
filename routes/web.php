@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\RouteController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerminalController;
@@ -93,12 +94,22 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     });
     //Terminals Controller
     Route::controller(TerminalController::class)->group(function(){
-        Route::get('/all/tem', 'AllTem')->name('all.tem');
-        Route::get('/add/tem', 'AddTem')->name('add.tem');
-        Route::post('/store/tem', 'StoreTem')->name('store.tem');
-        Route::get('/edit/tem/{id}', 'EditTem')->name('edit.tem');
-        Route::post('/update/tem', 'UpdateTem')->name('update.tem');
-        Route::get('/delete/tem/{id}', 'DeleteTem')->name('delete.tem');
+        Route::get('/all/teminals', 'AllTem')->name('all.tem');
+        Route::get('/add/teminal', 'AddTem')->name('add.tem');
+        Route::post('/store/teminal', 'StoreTem')->name('store.tem');
+        Route::get('/edit/teminal/{id}', 'EditTem')->name('edit.tem');
+        Route::post('/update/teminal', 'UpdateTem')->name('update.tem');
+        Route::get('/delete/teminal/{id}', 'DeleteTem')->name('delete.tem');
+
+    });
+    //Routes Controller
+    Route::controller(RouteController::class)->group(function(){
+        Route::get('/all/route', 'AllRoute')->name('all.route');
+        Route::get('/add/route', 'AddRoute')->name('add.route');
+        Route::post('/store/route', 'StoreRoute')->name('store.route');
+        Route::get('/edit/route/{id}', 'EditRoute')->name('edit.route');
+        Route::post('/update/route', 'UpdateRoute')->name('update.route');
+        Route::get('/delete/route/{id}', 'DeleteRoute')->name('delete.route');
 
     });
 });

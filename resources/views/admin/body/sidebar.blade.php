@@ -74,7 +74,13 @@
                     <li class="nav-item">
                     <a href="{{ route('add.tem') }}" class="nav-link">Add Terminal</a>
                     </li>
-                    {{-- we can add more if needed --}}
+                    <li class="nav-item">
+                    <a href="{{ route('all.route') }}" class="nav-link">All Routes</a> 
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ route('add.route') }}" class="nav-link">Add Route</a>
+                    </li>
+                    
                 </ul>
             </div>
         </li>

@@ -38,6 +38,7 @@
                             <label for="exampleInputUsername1"  class="form-label">Region</label>
                             <Select type="text" class="form-control @error('reg_id') is-invalid @enderror" 
                             name="reg_id" >
+                            <option value="">Select Region of Terminal</option>
                             @foreach ($data as $item)
                             <option value="{{$item->id}}">{{$item->name.' ( '. $item->city . ' )'}}</option>
                                 
