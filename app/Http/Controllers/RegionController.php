@@ -10,12 +10,12 @@ class RegionController extends Controller
     // START METHOD
     public function AllReg(){
         $data = Region::latest()->get();
-        return view('backend.terminals.all_reg',compact('data'));
+        return view('backend.regions.all_reg',compact('data'));
     }//END METHOD
 
     // START METHOD
     public function AddReg(){
-        return view('backend.terminals.add_reg');
+        return view('backend.regions.add_reg');
     }//END METHOD
 
     // START METHOD
@@ -44,7 +44,7 @@ class RegionController extends Controller
     // START METHOD
     public function EditReg(Request $request){
         $data = Region::findOrFail($request->id);
-        return view('backend.terminals.edit_reg',compact('data'));
+        return view('backend.regions.edit_reg',compact('data'));
     }//END METHOD
 
     // START METHOD
