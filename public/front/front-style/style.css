@@ -39,6 +39,14 @@
 .navbar .navbar-nav .nav-item{
     font-weight: 500;
 }
+.navbar .navbar-brand img{
+    height: 35px;
+    width: 100px;
+}
+.navbar .navbar-brand span{
+    font-weight: 600;
+    font-size: 2rem;
+}
 
 .navbar .navbar-nav li a span{
     color: #0155C2;
@@ -102,22 +110,37 @@
 
 /* Davis navbar end */
 
+/* large image */
+.front-image{
+    width: 100%;
+    margin-top: 10px;
+   
+}
+
+.front-image img{
+    width: 100%;
+    height: 50%;
+}
+
+/* large image end */
+
 .body{
    margin: 0 3%;
    align-items: center;
    justify-content: center;
 }
-.carousel-inner{
+/* .carousel-inner{
     width: 100%;
     height: 680px;
     border-radius: 20px;
 }
 .carousel-inner img{
     height: 680px;
-}
+} */
 .body-cards{
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 20px 0;
@@ -126,11 +149,18 @@
 .body-cards .card{
     height: 210px;
     padding: 10px;
-    margin: 20px 40px 20px 0;
+    margin: 20px 34px 20px 34px;
     border-top: 1px solid #ff7a00;
     border-left: 1px solid #ff7a00;
     border-right: 1px solid #0155c2;
     border-bottom: 1px solid #0155c2;
+    transition: 1s;
+}
+.body-cards .card:hover{
+    border: 1px solid #0155c2;
+    background-color: rgb(239, 238, 254);
+    height: 225px;
+    
 }
 .card i{
     font-size: 40px;
@@ -149,15 +179,17 @@
     font-style: normal;
     font-size: 25px;
 }
+
 .statement{
-    display: flex;
     padding: 20px 0;
-    padding-bottom: 20px;
+    padding-bottom: 20px; 
+    
 }
 .statement .msg{
     padding: 20px;
+    width: 50%;
 }
-.statement h5{
+.statement .msg h5{
     color: #0155c2;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
@@ -165,16 +197,30 @@
     font-size: 35px;  
     line-height: -20px; 
 }
-.statement p{
-    color: #ff7a00;
+.statement .msg p{
+    /* color: #ff7a00; */
+    color: #656565;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 25px;
     line-height: -20px;
 }
+
+.statement .logo1{
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    padding-top: 40px;
+   
+} 
+.statement .logo1 img {
+    width: 100%;
+    height: 70%;
+    
+}
 .smart{
-    height: 600px;
+    /* height: 600px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,12 +228,13 @@
     padding: 20px ;
     background-color: whitesmoke;
     padding-bottom: 20px;
+    flex-wrap: wrap;
 }
 .smart-img{
     width: 50%;
 }
 .smart-img img{
-    width: 550px;
+    width: 100%;
 }
 .smart-info{
     width: 50%;
@@ -224,38 +271,54 @@
     line-height: -20px;
 }
 .smart-info ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     list-style: none;
+    padding-inline-start: 0px;
+
 }
+
+
+
 .smart-info ul li{
+    display: flex;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 25px;
     color: #ff7a00;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     line-height: -20px;
+    text-wrap:wrap ;
 }
 .smart-info ul li i{
     color: #0155c2;
     padding-right: 10px;
 }
+
+/* footer */
 .gbras-footer{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; 
     align-items: center;
     padding: 30px;
     background-color: whitesmoke;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.gbras-footer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
 }
 .gbras-footer .footer-logo{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    width: 400px;
+    
 }
 .gbras-footer .footer-logo img{
-    width: 300px;
+    width: 70%;
     margin-bottom: 20px;
 }
 .gbras-footer .footer-logo .social-icon{
@@ -274,43 +337,62 @@
     display: flex;
     flex-direction: column;
     padding: 30px;
-    width: 400px;
+    
 }
 .gbras-footer .footer-about{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    width: 400px;
+    
 }
 .gbras-footer .footer-email{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    width: 500px;
+    width: 100%;
 }
 .gbras-footer .footer-support .head{
     color: #0155c2;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 30px;
+}
+
+.gbras-footer .footer-support a{
+    text-decoration: none;
+    
+}
+
+.gbras-footer .footer-support a p:hover{
+    border-bottom: 2px solid #0155c2;
 }
 .gbras-footer .footer-support p{
     color: #ff7a00;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 25px;
+    transition: 1s;
 }
 .gbras-footer .footer-about .head{
     color: #0155c2;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.gbras-footer .footer-about a{
+    text-decoration: none;
+    
 }
 .gbras-footer .footer-about p{
     color: #ff7a00;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 20px;
+    transition: 1s;
+}
+.gbras-footer .footer-about a p:hover{
+    border-bottom: 2px solid #0155c2;
 }
 .gbras-footer .footer-email p{
     color: #0155c2;
@@ -320,7 +402,7 @@
     margin-bottom: 30px;
 }
 .gbras-footer .footer-email input{
-    width: 300px;
+    width: 100%;
     height: 45px;
     border: 1px solid #ff7a00;
     padding: 0 10px;
@@ -333,9 +415,381 @@
     padding: 10px;
     font-family: "ubuntu", sans-serif;
     font-weight: 300;
+    border-radius: 10px;
 }
 .gbras-footer .footer-email button:hover{
     background-color: transparent;
     outline: #ff7a00;
     color: #ff7a00;
+}
+
+/* Bus-Hiring / Routes footer */
+.page-footer {
+    margin-top: 10rem;
+}
+
+
+/* route frontend */
+
+.routes-page .route-head{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.routes-page .route-head h1{
+    color: #0155C2;
+    font-weight: 600;
+    font-family:'Gill Sans';
+    font-size: 45px;
+}
+
+.routes-page .route-form{
+    padding: 40px 180px;
+}
+
+.routes-page .route-form form label{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.routes-page .route-form form .button-container{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.routes-page .route-form form .button-container button{
+    width: 70%;
+}
+
+.routes-page .route-table {
+    margin-top: 40px;
+    padding: 20px 180px;
+}
+
+.routes-page .route-table thead tr th {
+    color: #0155C2;
+    font-weight: 600;
+}
+
+/* Bus Hiring Page */
+
+.busHiring-page .busHiring-head{
+    margin-top: 4rem;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.busHiring-page .busHiring-head h1{
+    color: #0155C2;
+    font-weight: 600;
+    font-family:'Gill Sans';
+    font-size: 45px;
+}
+
+.busHiring-page .busHiring-container{
+    padding-left: 13rem;
+    padding-right: 13rem;
+    flex-wrap: wrap;
+}
+
+.busHiring-page .busHiring-info{
+    color: #656565;
+    padding-top: 5rem;
+    padding-right: 2rem;
+}
+
+.busHiring-page .busHiring-info .busHiring-info-head{
+    color: #ff7a00;
+    font-weight: 400;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+
+.busHiring-page .busHiring-info p, ul{
+    font-size: 17px;
+}
+
+.busHiring-page .busHiring-form {
+    padding: 35px;
+    
+}
+
+.busHiring-page .busHiring-form form h2{
+    text-align: center;
+    color: #0155C2;
+    font-weight: 600;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 40px;
+
+}
+
+.busHiring-page .busHiring-form form div{
+    margin-top: .5rem;
+}
+
+.busHiring-page .busHiring-form form .btn{
+    background-color: #FF7A00;
+    color: white;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.busHiring-page .busHiring-form form .btn:hover{
+    background-color: #0155c2;
+}
+
+
+/* about us page  */
+
+.about-page .about-head{
+    margin-top: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-page .about-head h1{
+    color: #0155C2;
+    font-weight: 600;
+    font-family:'Gill Sans';
+    font-size: 45px;
+}
+
+.about-page .about-container{
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.about-page .about-image{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+.about-page .about-image img{
+    width: 100%;
+    max-height: 550px;
+}
+
+.about-page .about-info{
+    color: #656565;
+}
+
+.about-page .about-info1{
+    margin-top: 2rem;
+}
+
+.about-page .about-info .about-info-head{
+    color: #ff7a00;
+    font-weight: 400;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.about-page .about-info1 p{
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1500px) 
+{
+ 
+    /* Bus Hiring Page */
+
+    .busHiring-page .busHiring-container{
+        padding-left: 10rem;
+        padding-right: 10rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .busHiring-page .busHiring-info{
+        width: 100%;
+        max-width: 43rem;
+    }
+
+    .busHiring-page .busHiring-form{
+        width: 100%;
+        margin-top: 5rem;
+        margin-left: 1rem;
+        /* margin-right: 1rem; */
+        max-width: 53rem;
+        
+    }
+
+    .busHiring-page .busHiring-form form{
+        width: 100%;
+        
+    }
+
+    .busHiring-page .busHiring-form form h2{
+        font-size: 30px;
+    }
+
+    /* about us page */
+    .about-page .about-container{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+}
+
+
+
+@media (max-width: 1000px) 
+{
+    .statement .msg {
+        width: 100%;
+    }
+    .statement .logo1 {
+        display: none;
+    }
+    .smart .smart-img{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        
+    }
+
+    .smart .smart-img img{
+        height: 300px;
+        width: 60%;
+        
+    }
+
+    .smart .smart-info{
+        width: 100%;
+        /* text-align: left; */
+    }
+
+    .smart-info h2{
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .smart-info h3{
+        font-size: 29px;
+        text-align: center;
+    }
+
+    .smart-info p{
+        font-size: 23px;
+    }
+
+    .smart-info ul li{
+        font-size: 20px;
+    }
+
+    /* route table */
+    .routes-page .route-form{
+        padding: 40px 80px;
+    }
+
+    .routes-page .route-table {
+        margin-top: 40px;
+        padding: 20px 80px;
+    }
+
+    /* Bus Hiring Page */
+
+    .busHiring-page .busHiring-container{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        
+    }
+
+    /* about us page */
+    .about-page .about-container{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+}
+
+@media (max-width: 533px)
+{
+    .busHiring-page .busHiring-form form div{
+        width: 100%;
+    }
+
+    .busHiring-page .busHiring-form {
+        padding: 25px;
+        
+    }
+
+    .busHiring-page .busHiring-container{
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+        
+    }
+
+    /* about us page */
+    .about-page .about-container{
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+}
+@media (max-width: 500px)
+{
+    .navbar .navbar-brand span{
+        font-size: 1.5rem;
+    }
+
+    .routes-page .route-form{
+        padding: 40px 40px;
+    }
+
+    .routes-page .route-table {
+        margin-top: 40px;
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 314px)
+{
+    .navbar .navbar-brand span{
+        font-size: 1.2rem;
+    }
+
+    .navbar .navbar-brand img{
+        height: 20px;
+        width: 70px;
+    }
+
+    .routes-page .route-table {
+        margin-top: 40px;
+        padding: 20px 0px;
+    }
+
+    .busHiring-page .busHiring-form {
+        padding: 15px;
+        
+    }
+
+    .busHiring-page .busHiring-container{
+        padding-left: .8rem;
+        padding-right: .8rem;
+        
+    }
+
+    /* about us page */
+    .about-page .about-container{
+        padding-left: .7rem;
+        padding-right: .7rem;
+    }
 }

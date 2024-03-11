@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow" >
         <div class="container-fluid">
         
-          <a class="navbar-brand" href="#"><img src="buslogo.png" style="height: 35px;width: 100px;"/><span style="font-weight: 600;font-size: 2rem;"> GH-BRAS</span></a>
+          <a class="navbar-brand" href="/"><img src="buslogo.png" style=""/><span style=""> GH-BRAS</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -14,13 +14,16 @@
                     <a class="nav-link active" aria-current="page" href="/"><span>Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><span>Routes</span></a>
+                    <a class="nav-link active" aria-current="page" href=" {{ route('routepage') }} "><span>Routes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><span>Bus Hiring</span></a>
+                    <a class="nav-link active" aria-current="page" href=" {{ route('busHiring') }} "><span>Bus Hiring</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><span>About us</span></a>
+                    <a class="nav-link active" aria-current="page" href="#"><span>Find Bus</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href=" {{ route('aboutUs') }} "><span>About us</span></a>
                 </li>
                 
 
@@ -64,7 +67,9 @@
             </ul>
             
             
+            
           </div>
+          
           
         </div>
     </nav>
