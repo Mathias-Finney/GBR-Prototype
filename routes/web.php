@@ -23,11 +23,12 @@ use App\Http\Controllers\Backend\BusController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/userlogin', function () {
-    return view('frontend.register');
-});
+
 // User Frontend All Route
 Route::get('/', [UserController::class, 'Index'])->name('homepage');
+Route::get('/routes', [UserController::class, 'Route'])->name('routepage');
+Route::get('/busHiring', [UserController::class, 'BusHiring'])->name('busHiring');
+Route::get('/aboutus', [UserController::class, 'AboutUs'])->name('aboutUs');
 
 Route::get('/dashboard', function () {
     return view('profile.edituser');

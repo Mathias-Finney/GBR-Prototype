@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('front/front-style/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/front-style/style.css') }}">
     <!-- bootstrap icon link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="icon" href="{{ asset('front/images/G-BRaS LOGO@2x.png')}}">
+    <link rel="icon" href="{{ asset('front/images/G-BRaS LOGO@2x.png') }}">
     <title>Online TIcket</title>
 </head>
 <body>
     @include('layouts.navbar')
     @include('layouts.toast')
+    <div class="front-image">
+        <img src="{{ asset('front/images/indep.jpg')}}" alt="...">
+    </div>
     <div class="body mt-2">
         <!-- carousel cards -->
-        <div id="carouselExample" class="carousel slide">
+        {{-- <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="{{ asset('front/images/nkrumah1.jpg')}}" class="d-block w-100" alt="...">
@@ -36,7 +39,8 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div> --}}
+        
 
         <!-- destination info cards starts-->
         <div class="body-cards">
@@ -79,15 +83,15 @@
             </div>
         </div>
         <!-- destination info cards ends -->
-        <div class="statement">
-            <div class="msg">
+        <div class="statement row">
+            <div class="msg col-5">
                 <h5 class="mb-3">Do you want to go on a journey without hustling for ticket?
                     Relax, your bus-stop is just a click away.</h5>
                 <p>GBRAS, an online bus-ticket booking platform, is the solution to all your commuting problems- be it long journeys or short trails.
 
                     Book a bus ticket and enjoy your ride without cramming for space, in a comfortable bus, at a cost that your pocket can happily bear. </p>
             </div>
-            <div class="logo1">
+            <div class="logo1 col-7">
                 <img src="{{ asset('front/images/G-BRaS LOGO@2x.png')}}" alt="">
             </div>
         </div> 
@@ -96,59 +100,29 @@
                 <img src="{{ asset('front/images/pngegg.png')}}" alt="">
             </div>
             <div class="smart-info">
-                <h2>Smart journey, stay hassle-free. </h2>
-                <h3 class="h3-bck">Download the G-BRaS Travel app!</h3>
-                <p>Ride in convenience with the exclusive features of mobile app,
-                    including: </p>
+                <h2>Smart journey, stay hassle&nbsp;-&nbsp;free. </h2>
+                <h3 class="h3-bck">Download the G&nbsp;-&nbsp;BRaS Travel app!</h3>
+                <p>
+                    Ride in convenience with the exclusive features of mobile app,
+                    including:
+                </p>
                 <ul>
+            
                     <li><i class="bi bi-geo-alt"></i>Cashless payments</li>
                     <li><i class="bi bi-geo-alt"></i>Schedule a trip for future</li>
                     <li><i class="bi bi-geo-alt"></i>Tracking status with boarding point navigation</li>
                     <li><i class="bi bi-geo-alt"></i>Choose your favourite bus terminal location</li>
                     </ul>
-                <p>You don't want to complain every time you set out for a trip.
-                    Put an end to your daily commuting sufferings. </p>
-                    <h2>Experience G-BRaS!</h2>
+                <p>
+                    You don't want to complain every time you set out for a trip.
+                    Put an end to your daily commuting sufferings. 
+                </p>
+                <h2>Experience G&nbsp;-&nbsp;BRaS!</h2>
             </div>
         </div>   
 
     </div>
-    <footer class="gbras-footer">
-        <div class="footer-logo">
-            <img src="{{ asset('front/images/G-BRaS LOGO@2x.png')}}" alt="">
-            <div class="social-icon">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-whatsapp"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-            </div>
-        </div>
-        <div class="footer-support">
-            <p class="head">Support</p>
-            <a href="#"></a><p>Contact</p></a>
-            <a href="#"></a><p>FAQ</p></a>
-            <a href="#"></a><p>Download</p></a>
-            <a href="#"></a><p>Locate A Terminal</p></a>
-            <a href="#"></a><p>Product Registration</p></a>
-            <a href="#"></a><p>Spare Part</p></a>
-        </div>
-        <div class="footer-about">
-            <p class="head">GBRAS</p>
-            <a href="#"></a><p>About Us</p></a>
-            <a href="#"></a><p>GBRAS Design</p></a>
-            <a href="#"></a><p>Services</p></a>
-            <a href="#"></a><p>News Room</p></a>
-            <a href="#"></a><p>Website</p></a>
-        </div>
-        <div class="footer-email">
-            <p>Stay up to date on the latest from GBRAS</p>
-            <div class="form">
-                <input type="text" placeholder="Enter your E-mail Address">
-                <button class="btn btn-danger">Sign Up</button>
-            </div>
-        </div>
-    </footer>
-
+    @include('frontend.footer')
 
 
 

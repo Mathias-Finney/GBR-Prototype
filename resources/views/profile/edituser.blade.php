@@ -82,7 +82,8 @@
           <div class="row">
             <div class="col-md-5 border-right profile-part1">
               <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img class="rounded-circle mt-5" width="150px" height="150px" src="logoorange.jpg">
+                {{-- <img id="showImage" class="rounded-circle mt-5" width="150px" height="150px" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo): url('uploads/no_image.jpg') }}"> --}}
+                <img id="showImage" class="rounded-circle mt-5" width="150px" height="150px" src="logoorange.jpg">
                 <span class=" mt-3" style="width: 88px">
                   
                       <input type="file" class="form-control form-control-sm shadow-sm " aria-label="Upload" name="photo">
@@ -179,33 +180,35 @@
       </form>
       <div class="col-4 profile-part3 mt-5 pe-5 ps-5">
         <h3 style="color:#fc7400;font-weight: 510">Change Password</h3>
-        <form action="" method="" class="pt-2">
+        <form action="{{ route('password.update') }}" method="POST" class="pt-2">
           @csrf
+          @method('put')
+
           <div class="col-md-12 mt-4" style="text-align: left;">
-            <label for="input_Password" class="form-label">Current Password</label>
-            <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}  id="input_Password" required>
-            @error('password')
+            <label for="current_Password" class="form-label">Current Password</label>
+            <input type="password" name="current_password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}  id="current_Password" required>
+            @error('current_password', 'updatePassword')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="col-md-12 mt-4" style="text-align: left;">
             <label for="input_Password" class="form-label">New Password</label>
             <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}  id="input_Password" required>
-            @error('password')
+            @error('password', 'updatePassword')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="col-md-12 mt-4" style="text-align: left;">
-            <label for="input_Password" class="form-label">Confirm New Password</label>
+            <label for="input_Password_confirmation" class="form-label">Confirm New Password</label>
             <input type="password" name="password_confirmation" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}  id="input_Password" required>
-            @error('password_confirmation')
+            @error('password_confirmation', 'updatePassword')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
           </div>
 
           <div class="mt-5 text-center">
             <button class="btn btn-primary w-100 profile-button" type="submit">
-              Change Password
+              Save
             </button>
           </div>
         </form>
@@ -264,6 +267,19 @@
       
     </div>
   </div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+
+</script>
      
     
 </x-guest-layout>
