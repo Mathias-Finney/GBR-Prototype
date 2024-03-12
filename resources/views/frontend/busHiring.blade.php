@@ -33,7 +33,9 @@
                 </div>
             </div>
             <div class="busHiring-form col-6 shadow">
-                <form method="" action="" class="row ">
+                <form method="POST" action="{{ route('user.store.busHiring') }}" class="row ">
+                    @csrf
+
                     <h2>Request For Bus</h2>
                     <h6 class="mb-2" style="color: #010912;text-align: left;">Fields Mark with <a style="color: red;">*</a> are mandatory.</h6>
                     <hr style="margin-top: 0%;"/>
@@ -52,30 +54,43 @@
                         @enderror
                     </div>
                     <div class="col-6">
-                        <label for="contact_phone1" class="form-label">Conact Number<a style="color: red;"> *</a></label>
-                        <input type="tel" maxlength="9" name="phone1" class="form-control {{ $errors->has('phone1') ? 'is-invalid' : 'border-primary' }}" id="contact_phone1" placeholder="" value="{{old('phone1')}}">
+                        <label for="contact_phone1" class="form-label">Contact Number<a style="color: red;"> *</a></label>
+                        
+                        <div class="input-group">
+                            <span class="input-group-text {{ $errors->has('phone1') ? 'border-danger' : 'border-primary' }}" id="basic-addon1" >+233</span>
+                            <input id="contact_phone1" type="tel" maxlength="9" name="phone1" class="form-control {{ $errors->has('phone1') ? 'is-invalid' : 'border-primary' }}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="{{old('phone1')}}">
+                            
+                        </div>
                         @error('phone1')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+                        
                     </div>
                     <div class="col-6">
                         <label for="contact_phone2" class="form-label">Add. Contact Number</label>
-                        <input type="tel" maxlength="9" name="phone2" class="form-control {{ $errors->has('phone2') ? 'is-invalid' : 'border-primary' }}" id="contact_phone2" placeholder="" value="{{old('phone2')}}">
+                        
+                        <div class="input-group">
+                            <span class="input-group-text {{ $errors->has('phone2') ? 'border-danger' : 'border-primary' }}" id="basic-addon1" >+233</span>
+                            <input id="contact_phone2" type="tel" maxlength="9" name="phone2" class="form-control {{ $errors->has('phone2') ? 'is-invalid' : 'border-primary' }}" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="{{old('phone2')}}">
+                            
+                        </div>
                         @error('phone2')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+                        
                     </div>
+                    
                     <div class="col-12">
                         <label for="contact_email" class="form-label">Contact Email<a style="color: red;"> *</a></label>
-                        <input type="text" name="contactEmail" class="form-control {{ $errors->has('contactEmail') ? 'is-invalid' : 'border-primary' }}" id="contact_email" placeholder="" value="{{old('contactEmail')}}">
-                        @error('contactEmail')
+                        <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : 'border-primary' }}" id="contact_email" placeholder="" value="{{old('email')}}">
+                        @error('email')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col-6">
-                        <label for="from_location" class="form-label">Begining Location<a style="color: red;"> *</a></label>
-                        <input type="text" name="fromLocation" class="form-control {{ $errors->has('fromLocation') ? 'is-invalid' : 'border-primary' }}" id="from_location" placeholder="" value="{{old('fromLocation')}}">
-                        @error('fromLocation')
+                        <label for="from_location" class="form-label">Start Location<a style="color: red;"> *</a></label>
+                        <input type="text" name="startLocation" class="form-control {{ $errors->has('startLocation') ? 'is-invalid' : 'border-primary' }}" id="from_location" placeholder="" value="{{old('startLocation')}}">
+                        @error('startLocation')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -88,7 +103,7 @@
                     </div>
                     <div class="col-12">
                         <label for="departure_date" class="form-label">Departure Date<a style="color: red;"> *</a></label>
-                        <input type="date" name="departureDate" class="form-control {{ $errors->has('departureDate') ? 'is-invalid' : 'border-primary' }}" id="departure_date" placeholder="" value="{{old('departureDate')}}">
+                        <input type="datetime-Local" name="departureDate" class="form-control {{ $errors->has('departureDate') ? 'is-invalid' : 'border-primary' }}" id="departure_date" placeholder="" value="{{old('departureDate')}}">
                         @error('departureDate')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -104,8 +119,9 @@
                         <label for="bus_capacity" class="form-label">No.of Seats<a style="color: red;"> *</a></label>
                         <select name="busCapacity" class="form-control {{ $errors->has('busCapacity') ? 'is-invalid' : 'border-primary' }}" id="bus_capacity">
                             <option>-- Select --</option>
-                            <option value="" @if(old('busCapacity') == '') selected="selected" @endif>45</option>
-                            <option value="" @if(old('busCapacity') == '') selected="selected" @endif>55</option>
+                            @foreach ($all_bus as $item)
+                                <option value="{{ $item->capacity }}" @if( old('busCapacity') == $item->capacity) selected="selected" @endif>{{ $item->capacity }}</option>
+                            @endforeach
                         </select>
                         @error('busCapacity')
                             <div class="text-danger">{{ $message }}</div>
@@ -121,16 +137,17 @@
                     </div>
                     <div class="col-12">
                         <label for="purpose" class="form-label">Purpose<a style="color: red;"> *</a></label>
-                        <textarea name="purpose" class="form-control {{ $errors->has('purpose') ? 'is-invalid' : 'border-primary' }}" id="purpose" value="{{old('purpose')}}"></textarea>
+                        <textarea name="purpose" class="form-control {{ $errors->has('purpose') ? 'is-invalid' : 'border-primary' }}" id="purpose" value="">{{old('purpose')}}
+                        </textarea>
                         @error('purpose')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col-12">
-                        <button type="button" class="btn"> Submit</button>
+                        <button type="submit" class="btn"> Submit</button>
                     </div>
                     
-
+                    
                 </form>
 
             </div>
