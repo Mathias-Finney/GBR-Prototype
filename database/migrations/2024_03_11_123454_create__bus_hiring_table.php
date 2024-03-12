@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('company_name');
             $table->string('contacts_name');
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->timestamp('additional_phone')->nullable();
+            $table->string('email');
+            $table->integer('phone');
+            $table->integer('additional_phone')->nullable();
             $table->string('start_location');
             $table->string('end_location');
             $table->dateTime('depart_date');

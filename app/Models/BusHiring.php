@@ -9,7 +9,7 @@ class BusHiring extends Model
 {
     use HasFactory;
 
-    protected $table = 'bushirings';
+    protected $table = 'bus_hirings';
 
     protected $fillable = [
         'company_name',
@@ -27,13 +27,5 @@ class BusHiring extends Model
         'status',
     ];
 
-    static public function getRecord()
-    {
-        $return = self::select('terminals.*', 'regions.name as region', 'regions.city as city', 'regions.city_code as code')
-                        ->join('regions', 'regions.id', 'reg_id')
-                        ->orderBy('terminals.name', 'asc')
-                        ->get();
-        return $return;
-    }
 
 }

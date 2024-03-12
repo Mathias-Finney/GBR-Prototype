@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bus;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,7 +16,8 @@ class UserController extends Controller
     }
 
     public function BusHiring(){
-        return view('frontend.busHiring');
+        $all_bus = Bus::all();
+        return view('frontend.busHiring')->with('all_bus', $all_bus);
     }
 
     public function AboutUs(){

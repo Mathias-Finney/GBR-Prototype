@@ -67,7 +67,7 @@
                         
                     </div>
                     <div class="col-6">
-                        <label for="contact_phone2" class="form-label">Add. Contact Number<a style="color: red;"> *</a></label>
+                        <label for="contact_phone2" class="form-label">Add. Contact Number</label>
                         
                         <div class="input-group">
                             <span class="input-group-text {{ $errors->has('phone2') ? 'border-danger' : 'border-primary' }}" id="basic-addon1" >+233</span>
@@ -119,8 +119,9 @@
                         <label for="bus_capacity" class="form-label">No.of Seats<a style="color: red;"> *</a></label>
                         <select name="busCapacity" class="form-control {{ $errors->has('busCapacity') ? 'is-invalid' : 'border-primary' }}" id="bus_capacity">
                             <option>-- Select --</option>
-                            <option value="" @if(old('busCapacity') == '') selected="selected" @endif>45</option>
-                            <option value="" @if(old('busCapacity') == '') selected="selected" @endif>55</option>
+                            @foreach ($all_bus as $item)
+                                <option value="{{ $item->capacity }}" @if( old('busCapacity') == $item->capacity) selected="selected" @endif>{{ $item->capacity }}</option>
+                            @endforeach
                         </select>
                         @error('busCapacity')
                             <div class="text-danger">{{ $message }}</div>
@@ -136,7 +137,7 @@
                     </div>
                     <div class="col-12">
                         <label for="purpose" class="form-label">Purpose<a style="color: red;"> *</a></label>
-                        <textarea name="purpose" class="form-control {{ $errors->has('purpose') ? 'is-invalid' : 'border-primary' }}" id="purpose" value="{{old('purpose')}}"></textarea>
+                        <textarea name="purpose" class="form-control {{ $errors->has('purpose') ? 'is-invalid' : 'border-primary' }}" id="purpose" value="">{{old('purpose')}}</textarea>
                         @error('purpose')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -145,7 +146,7 @@
                         <button type="submit" class="btn"> Submit</button>
                     </div>
                     
-
+                    
                 </form>
 
             </div>

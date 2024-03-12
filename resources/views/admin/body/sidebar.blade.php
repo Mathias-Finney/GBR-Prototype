@@ -34,6 +34,12 @@
                     <li class="nav-item">
                     <a href="{{ route('add.bus') }}" class="nav-link">Add Buses</a>
                     </li>
+                    <li class="nav-item">
+                    <a href="{{ route('all.busHiring') }}" class="nav-link">All Buses Hirings</a> 
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ route('add.busHiring') }}" class="nav-link">Add Buses Hiring</a>
+                    </li>
                     {{-- we can add more if needed --}}
                 </ul>
             </div>

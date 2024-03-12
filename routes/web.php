@@ -33,7 +33,7 @@ Route::get('/aboutus', [UserController::class, 'AboutUs'])->name('aboutUs');
 
 
 // Bus Hiring Frontend 
-Route::post('/busHire', [BusHiringController::class, 'StoreBusesHiring'])->name('user.store.busHiring');
+Route::post('/busHire', [BusHiringController::class, 'StoreBusHiring'])->name('user.store.busHiring');
 
 Route::get('/dashboard', function () {
     return view('profile.edituser');
@@ -84,6 +84,17 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/edit/bus/{id}', 'EditBuses')->name('edit.buses');
         Route::post('/update/bus', 'UpdateBuses')->name('update.buses');
         Route::get('/delete/bus/{id}', 'DeleteBus')->name('delete.bus');
+
+    });
+    //BusHiring Controller
+    Route::controller(BusHiringController::class)->group(function(){
+        Route::get('/all/busHiring', 'AllBusHiring')->name('all.busHiring');
+        Route::get('/add/busHiring', 'AddBusHiring')->name('add.busHiring');
+        Route::post('/store/busHiring', 'StoreBusHiring')->name('store.busHiring');
+        Route::get('/edit/busHiring/{id}', 'EditBusHiring')->name('edit.busHiring');
+        Route::get('/update/busHiringStatus/{id}/{status}', 'UpdateBusHiringStatus')->name('update.busHiringStatus');
+        Route::post('/update/busHiring', 'UpdateBusHiring')->name('update.busHiring');
+        Route::get('/delete/busHiring/{id}', 'DeleteBusHiring')->name('delete.busHiring');
 
     });
     //Regions Controller

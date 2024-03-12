@@ -10,25 +10,25 @@ class BusHiringController extends Controller
 {
     //
 
-    public function AllBusesHiring(){
+    public function AllBusHiring(){
         $all_busHiring = BusHiring::latest()->get();
         return view('backend.busHiring.all_busHiring',compact('all_busHiring'));
     }//END METHOD
 
     // START METHOD
-    public function AddBusesHiring(){
+    public function AddBusHiring(){
         return view('backend.busHiring.add_busHiring');
     }//END METHOD
 
     // START METHOD
-    public function StoreBusesHiring(Request $request){
+    public function StoreBusHiring(Request $request){
         //VAIDATION
         
         $request->validate([
             'name' => 'string | required | max:200',
             'contactName' => 'required | alpha | max:122',
             'email' => 'required | email | max:122',
-            'phone1' => ['required', 'numeric', 'max_digits:9',],
+            'phone1' => ['required', 'numeric', 'max_digits:9', 'min_digits:9'],
             'phone2' => ['nullable', 'numeric', 'max_digits:9',],
             'startLocation' => 'max:50 | string ',
             'endLocation' => 'max:50 | string',
@@ -37,23 +37,21 @@ class BusHiringController extends Controller
             'busCapacity' => 'required | numeric | min:7',
             'numberOfDays' => 'required| numeric | max:30 | min:1',
             'purpose' => 'required | string',
-            'status' => 'max:9 | in:decline, approve ',
         ]);
 
         BusHiring::create([
             'company_name' => $request->name,
-            'contact_name' => $request->contactName,
+            'contacts_name' => $request->contactName,
             'email' => $request->email,
             'phone' => $request->phone1,
             'additional_phone' => $request->phone2,
             'start_location' => $request->startLocation,
             'end_location' => $request->endLocation,
-            'depart_date' => $request->departureDate,
+            'depart_date' => date('Y-m-d H:i:s', strtotime($request->departureDate)),//$request->departureDate,
             'number_of_busses' => $request->numberOfBusses,
             'bus_capacity' => $request->busCapacity,
-            'number_of_Days' => $request->numberOfDays,
+            'number_of_days' => $request->numberOfDays,
             'purpose' => $request->purpose,
-            'status' => $request->status
         ]);
         // dd($request);
         // $request->save();
@@ -65,34 +63,37 @@ class BusHiringController extends Controller
             'status' => 'success'
         );
 
-        if(Auth::user()->role == '')
+        if (Auth::check())
         {
-            return redirect()->back()->with($notification);    
-        }
-        elseif(Auth::user()->role == 'user')
-        {
-            return redirect()->back()->with($notification);
-        }
-        elseif(Auth::user()->role == 'admin')
-        {
-            return redirect()->route('all.busHiring')->with($notification);
-        }
-        elseif(Auth::user()->role == 'agent')
-        {
-            return redirect()->route('all.busHiring')->with($notification);
+            if(Auth::user()->role == '')
+            {
+                return redirect()->back()->with($notification);    
+            }
+            elseif(Auth::user()->role == 'user')
+            {
+                return redirect()->back()->with($notification);
+            }
+            elseif(Auth::user()->role == 'admin')
+            {
+                return redirect()->route('all.busHiring')->with($notification);
+            }
+            elseif(Auth::user()->role == 'agent')
+            {
+                return redirect()->route('all.busHiring')->with($notification);
+            }
         }
 
         return redirect()->back()->with($notification);
     }//END METHOD 
 
     // START METHOD
-    public function EditBusesHiring(Request $request){
+    public function EditBusHiring(Request $request){
         $data = BusHiring::findOrFail($request->id);
         return view('backend.busHirng.edit_busHirng',compact('data'));
     }//END METHOD
 
     // START METHOD
-    public function UpdateBusesHiring(Request $request){
+    public function UpdateBusHiring(Request $request){
 
         $id = $request->id;
 
@@ -113,21 +114,47 @@ class BusHiringController extends Controller
         ]);
 
         BusHiring::findOrFail($id)->update([
-            'company_name' => 'string | required | max:200',
-            'contacts_name' => 'required | alpha | max:122',
-            'email' => 'required | email | max:122',
-            'phone' => ['required', 'numeric', 'max_digits:9',],
-            'additional_phone' => ['nullable', 'numeric', 'max_digits:9',],
-            'start_location' => 'max:50 | string ',
-            'end_location' => 'max:50 | string',
-            'depart_date' => ['required', 'date', 'after:today'],
-            'number_of_busses' => 'required | numeric | min:1',
-            'bus_capacity' => 'required | numeric | min:7',
-            'number_of_days' => 'required| numeric | max:30 | min:1',
-            'purpose' => 'required | string',
-            'status' => 'max:9 | in:decline, approve ',
+            'company_name' => $request->name,
+            'contacts_name' => $request->contactName,
+            'email' => $request->email,
+            'phone' => $request->phone1,
+            'additional_phone' => $request->phone2,
+            'start_location' => $request->startLocation,
+            'end_location' => $request->endLocation,
+            'depart_date' => date('Y-m-d H:i:s', strtotime($request->departureDate)),//$request->departureDate,
+            'number_of_busses' => $request->numberOfBusses,
+            'bus_capacity' => $request->busCapacity,
+            'number_of_days' => $request->numberOfDays,
+            'status' => $request->status,
+            'purpose' => $request->purpose,
         ]);
 
+        $notification = array(
+            'message' => 'Bus Hiring Successfully',
+            'alert-type' => 'success'
+        );
+        
+
+        return redirect()->route('all.busHiring')->with($notification);
+   }// END METHOD
+    public function UpdateBusHiringStatus(Request $request){
+
+        $id = $request->id;
+        $status = $request->status;
+        $message = '';
+
+        // dd($id, $status);
+
+        BusHiring::findOrFail($id)->update([
+            'status' => $status,
+        ]);
+
+        if($status == 'approve'){
+            $message = 'Bus Hiring Approved';
+        }
+        if($status == 'decline'){
+            $message = 'Bus Hiring Declined';
+        }
         $notification = array(
             'message' => 'Bus Hiring Successfully',
             'alert-type' => 'success'
