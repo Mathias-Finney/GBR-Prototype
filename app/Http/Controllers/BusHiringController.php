@@ -59,9 +59,10 @@ class BusHiringController extends Controller
         // dd($request);
         // $request->save();
 
+        $message ='Bus Hired Successfully';
         
         $notification = array(
-            'message' => 'Bus Hired Successfully',
+            'message' => $message,
             'alert-type' => 'success',
             'status' => 'success'
         );
@@ -70,10 +71,22 @@ class BusHiringController extends Controller
         {
             if(Auth::user()->role == '')
             {
+                $message ='Bus Hired Successfully, you will be sent an email once your request has been seen';
+                $notification = array(
+                    'message' => $message,
+                    'alert-type' => 'success',
+                    'status' => 'success'
+                );
                 return redirect()->back()->with($notification);    
             }
             elseif(Auth::user()->role == 'user')
             {
+                $message ='Bus Hired Successfully, you will be sent an email once your request has been seen';
+                $notification = array(
+                    'message' => $message,
+                    'alert-type' => 'success',
+                    'status' => 'success'
+                );
                 return redirect()->back()->with($notification);
             }
             elseif(Auth::user()->role == 'admin')
@@ -86,6 +99,12 @@ class BusHiringController extends Controller
             }
         }
 
+        $message ='Bus Hired Successfully, you will be sent an email once your request has been seen';
+        $notification = array(
+            'message' => $message,
+            'alert-type' => 'success',
+            'status' => 'success'
+        );
         return redirect()->back()->with($notification);
     }//END METHOD 
 
