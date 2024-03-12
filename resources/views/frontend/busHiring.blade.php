@@ -137,7 +137,8 @@
                     </div>
                     <div class="col-12">
                         <label for="purpose" class="form-label">Purpose<a style="color: red;"> *</a></label>
-                        <textarea name="purpose" class="form-control {{ $errors->has('purpose') ? 'is-invalid' : 'border-primary' }}" id="purpose" value="">{{old('purpose')}}</textarea>
+                        <textarea name="purpose" class="form-control {{ $errors->has('purpose') ? 'is-invalid' : 'border-primary' }}" id="purpose" value="">{{old('purpose')}}
+                        </textarea>
                         @error('purpose')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

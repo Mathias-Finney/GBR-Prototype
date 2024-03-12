@@ -5,7 +5,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a class="btn btn-inverse-info" href="{{ route('add.bus') }}">ADD NEW BUSES.</a>
+            <a class="btn btn-inverse-info" href="{{ route('add.busHiring') }}">HIRE A BUS</a>
         </ol>
     </nav>
 
@@ -50,12 +50,12 @@
                 <td>{{ $item->number_of_days }}</td>
                 <td>{{ $item->status }}</td>
                 <td>
-                    <a class="btn btn-inverse-success" href="{{ route('update.busHiringStatus', [$item->id, 'approve']) }}">Approve</a>
-                    <a class="btn btn-inverse-danger" href="{{ route('update.busHiringStatus', [$item->id, 'decline']) }}">Decline</a>
+                    <a class="btn btn-inverse-success" href="{{ route('update.busHiringStatus', [$item->id, 'approve']) }}"><i class="bi bi-check-lg"></i></a>
+                    <a class="btn btn-inverse-danger" href="{{ route('update.busHiringStatus', [$item->id, 'decline']) }}"><i class="bi bi-x-lg"></i></a>
                 </td>
                 <td>
-                    <a class="btn btn-inverse-warning" href="{{ route('edit.buses', $item->id) }}">Edit</a>
-                    <a class="btn btn-inverse-danger" href="{{ route('delete.bus', $item->id) }}">Delete</a>
+                    <a class="btn btn-inverse-warning" href="{{ route('edit.busHiring', $item->id) }}">Edit</a>
+                    <a class="btn btn-inverse-danger" id="delete" href="{{ route('delete.busHiring', $item->id) }}">Delete</a>
                 </td>
             </tr>
             @endforeach

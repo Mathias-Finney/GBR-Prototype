@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BusHiring;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Bus;
+
 
 class BusHiringController extends Controller
 {
@@ -17,7 +19,8 @@ class BusHiringController extends Controller
 
     // START METHOD
     public function AddBusHiring(){
-        return view('backend.busHiring.add_busHiring');
+        $all_bus = Bus::all();
+        return view('backend.busHiring.add_busHiring')->with('all_bus', $all_bus);
     }//END METHOD
 
     // START METHOD
@@ -89,7 +92,9 @@ class BusHiringController extends Controller
     // START METHOD
     public function EditBusHiring(Request $request){
         $data = BusHiring::findOrFail($request->id);
-        return view('backend.busHirng.edit_busHirng',compact('data'));
+        $all_bus = Bus::all();
+
+        return view('backend.busHiring.edit_busHiring',compact('data', 'all_bus'));
     }//END METHOD
 
     // START METHOD
@@ -97,21 +102,23 @@ class BusHiringController extends Controller
 
         $id = $request->id;
 
+        
         $request->validate([
-            'company_name' => 'string | required | max:200',
-            'contacts_name' => 'required | alpha | max:122',
+            'name' => 'string | required | max:200',
+            'contactName' => 'required | alpha | max:122',
             'email' => 'required | email | max:122',
-            'phone' => ['required', 'numeric', 'max_digits:9',],
-            'additional_phone' => ['nullable', 'numeric', 'max_digits:9',],
-            'start_location' => 'max:50 | string ',
-            'end_location' => 'max:50 | string',
-            'depart_date' => ['required', 'date', 'after:today'],
-            'number_of_busses' => 'required | numeric | min:1',
-            'bus_capacity' => 'required | numeric | min:7',
-            'number_of_days' => 'required| numeric | max:30 | min:1',
+            'phone1' => ['required', 'numeric', 'max_digits:9', 'min_digits:9'],
+            'phone2' => ['nullable', 'numeric', 'max_digits:9', 'min_digits:9'],
+            'startLocation' => 'max:50 | string ',
+            'endLocation' => 'max:50 | string',
+            'departureDate' => ['required', 'date', 'after:today'],
+            'numberOfBusses' => 'required | numeric | min:1',
+            'busCapacity' => 'required | numeric | min:7',
+            'numberOfDays' => 'required| numeric | max:30 | min:1',
             'purpose' => 'required | string',
-            'status' => 'max:9 | in:decline, approve ',
         ]);
+
+        // dd($request);
 
         BusHiring::findOrFail($id)->update([
             'company_name' => $request->name,
@@ -130,7 +137,7 @@ class BusHiringController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Bus Hiring Successfully',
+            'message' => 'Bus Hiring updated Successfully',
             'alert-type' => 'success'
         );
         
