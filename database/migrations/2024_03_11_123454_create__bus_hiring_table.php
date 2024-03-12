@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('bus_capacity');
             $table->integer('number_of_days');
             $table->text('purpose');
-            $table->enum('status',['approve', 'decline'])->default('approve');
+            $table->enum('status',['approve', 'decline', 'pending'])->default('pending');
             $table->timestamps();
         });
     }
