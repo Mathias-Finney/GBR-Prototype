@@ -23,8 +23,9 @@
                     <a class="nav-link active" aria-current="page" href="#"><span>Find Bus</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href=" {{ route('aboutUs') }} "><span>About us</span></a>
+                    <a class="nav-link active" aria-current="page" href=" {{ route('aboutUs') }} "><span>About Us</span></a>
                 </li>
+                
                 
 
             </ul>
@@ -33,11 +34,17 @@
             </ul>
             <ul class="navbar-nav">
                 @guest
-                <li class="nav-item">
+                <li class="nav-item sign-reg1">
                     <a class="nav-link active" aria-current="page" href="{{ route('login')}}"><button class="btn btn-outline-info ps-3 pe-3 border-rounded">Sign In</button></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item sign-reg1">
                     <a class="nav-link active" aria-current="page" href="{{ route('register') }}"><button class="btn btn-outline-primary ps-3 pe-3 border-rounded">Sign Up</button></a>
+                </li>
+                <li class="nav-item sign-reg2">
+                    <a class="nav-link active" aria-current="page" href="{{ route('login')}}"><span>Login</span></a>
+                </li>
+                <li class="nav-item sign-reg2">
+                    <a class="nav-link active" aria-current="page" href=" {{ route('register') }} "><span>Sign up</span></a>
                 </li>
                 @endguest
                 @auth

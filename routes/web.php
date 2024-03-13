@@ -31,6 +31,7 @@ use App\Http\Controllers\BusHiringController;
 // User Frontend All Route
 Route::get('/', [UserController::class, 'Index'])->name('homepage');
 Route::get('/routes', [UserController::class, 'Route'])->name('routepage');
+Route::post('/route', [UserController::class, 'RouteSearch'])->name('routepageSearch');
 Route::get('/busHiring', [UserController::class, 'BusHiring'])->name('busHiring');
 Route::get('/aboutus', [UserController::class, 'AboutUs'])->name('aboutUs');
 
