@@ -10,14 +10,14 @@ class RouteController extends Controller
 {
     public function AllRoute(){
         $data = Route::getRecord();
-        return view('backend.routes.all_route',compact('data'));
+        return view('backend.trav_routes.all_route',compact('data'));
     }//END METHOD
 
     // START METHOD
     public function AddRoute(){
         $data = Terminal::all();
         // dd($data);
-        return view('backend.routes.add_route',compact('data'));
+        return view('backend.trav_routes.add_route',compact('data'));
     }//END METHOD
 
     // START METHOD
@@ -50,7 +50,7 @@ class RouteController extends Controller
         $route = Route::findOrFail($request->id);
         $terminal = Terminal::all();
         
-        return view('backend.routes.edit_route',compact(['route', 'terminal']));
+        return view('backend.trav_routes.edit_route',compact(['route', 'terminal']));
     }//END METHOD
 
     // START METHOD

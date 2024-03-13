@@ -90,7 +90,7 @@
 
                     {{-- Travels --}}
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Trips</a> 
+                        <a href="{{ route('all.trip') }}" class="nav-link">Trips</a> 
                     </li>
                     
                 </ul>

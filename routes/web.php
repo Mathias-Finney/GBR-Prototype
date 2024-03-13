@@ -11,6 +11,7 @@ use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerminalController;
 use App\Http\Controllers\Backend\BusController;
+use App\Http\Controllers\TripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -135,6 +136,17 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/edit/payment/{id}', 'EditPayment')->name('edit.payment');
         Route::post('/update/payment', 'UpdatePayment')->name('update.payment');
         Route::get('/delete/payment/{id}', 'DeletePayment')->name('delete.payment');
+
+    });
+
+    //Payment Controller
+    Route::controller(TripController::class)->group(function(){
+        Route::get('/all/trips', 'AllTrip')->name('all.trip');
+        Route::get('/add/trip', 'AddTrip')->name('add.trip');
+        Route::post('/store/trip', 'StoreTrip')->name('store.trip');
+        Route::get('/edit/trip/{id}', 'EditTrip')->name('edit.trip');
+        Route::post('/update/trip', 'UpdateTrip')->name('update.trip');
+        Route::get('/delete/trip/{id}', 'DeleteTrip')->name('delete.trip');
 
     });
 });
