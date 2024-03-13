@@ -126,7 +126,7 @@
                 <hr style="margin-top: 0%;"/>
                 <div class="col-md-6">
                     <label for="input_name" class="form-label">Name<a style="color: red;"> *</a></label>
-                    <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : 'border-primary' }}" id="input_name" placeholder="John Affo" value="{{old('name')}}">
+                <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : 'border-primary' }}" id="input_name" placeholder="John Affo" value="{{old('name')}}">
                     @error('name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror

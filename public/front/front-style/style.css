@@ -56,6 +56,11 @@
 .navbar .navbar-nav li span:hover{
     color: #FF7A00;
     text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+.navbar .navbar-nav .sign-reg2 {
+    display: none;
 }
 
 .navbar .icon{
@@ -599,7 +604,16 @@
 
 
 
-
+@media (max-width: 993px)
+{
+    /* navbar signin and register icons/tabs */
+    .navbar .navbar-nav .sign-reg1 {
+        display: none;
+    }
+    .navbar .navbar-nav .sign-reg2 {
+        display: inline;
+    }
+}
 
 
 
