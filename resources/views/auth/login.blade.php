@@ -79,7 +79,7 @@
 
             .buslogo2{
                 width: 15rem;
-                margin-bottom: -2rem;
+                margin-bottom: -3rem;
             }
         }
 
@@ -155,11 +155,11 @@
         }
     </style>
 
-    <div class="row p-4">
+    <div class="row p-4 mt-5">
         
-        <div class="buslogo1-container col-6" style="">
+        <div class="buslogo1-container col-7" style="">
             <a href="/">
-                <img src="buslogo.png" class="buslogo1" style="" />
+                <img src="buslogo.png" class="buslogo1" style="width: 100%" />
             </a>
         </div>
 
@@ -169,7 +169,7 @@
             </a>
         </div>
         
-        <div class="register_form col-6 mb-5" style="margin-top: 40px;">
+        <div class="register_form col-5 mb-5" style="margin-top: 40px;">
             <form class="row g-3 ps-3 pe-3 shadow" action="{{ route('login') }}" method="POST" style="">
                 @csrf
                 <h1 class="text-primary mb-4 text-center">Login</h1>
