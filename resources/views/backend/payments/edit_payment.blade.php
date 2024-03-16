@@ -63,8 +63,8 @@
                             <Select type="text" class="form-control @error('status') is-invalid @enderror" 
                             name="status">
                             <option value="">Select Status</option>
+                            <option value="Completed">Completed</option>
                             <option value="Pending">Pending</option>
-                            <option value="Complete">Completed</option>
                             <option value="Failed">Failed</option>
                            
                             </Select>

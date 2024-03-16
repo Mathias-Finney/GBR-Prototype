@@ -25,8 +25,8 @@ class UserController extends Controller
     public function RouteSearch(Request $request){
 
         $request->validate([
-            'startLocation' => ['nullable', 'alpha_num:ascii', 'max:50'],
-            'endLocation' => ['nullable', 'alpha_num:ascii', 'max:50'],
+            'startLocation' => ['nullable', 'string', 'max:50'],
+            'endLocation' => ['nullable', 'string', 'max:50'],
             'travelDate' => ['nullable', 'date','after:today']
         ]);
 
