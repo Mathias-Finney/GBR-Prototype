@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bus;
 use App\Models\Route;
+use App\Models\Terminal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,8 +19,19 @@ class UserController extends Controller
         $end_terminal = '';
         $travel_date = '';
 
-        $data = Route::getRecord();
-        return view('frontend.route')->with(['data' => $data, 'end_terminal' => $end_terminal, 'start_terminal' => $start_terminal, 'travel_date' => $travel_date]);
+      
+        $data = DB::table('trips')
+                ->join('routes', 'routes.id', '=', 'trips.route_id')
+                ->join('terminals', 'terminals.id', '=', 'routes.st_tem_id')
+                ->select('trips.*', 'terminals.name as start_terminal', 'routes.end_terminal', 'routes.price', 'trips.departure as departure')
+                ->where('trips.status', '=', 'pending')
+                ->get();
+
+        $all_terminals = DB::table('terminals')
+                        ->select('terminals.name')
+                        ->get();
+
+        return view('frontend.route')->with(['data' => $data, 'end_terminal' => $end_terminal, 'start_terminal' => $start_terminal, 'travel_date' => $travel_date, 'all_terminals' => $all_terminals]);
     }
 
     public function RouteSearch(Request $request){
@@ -34,20 +46,23 @@ class UserController extends Controller
         $end_terminal = $request->endLocation;
         $travel_date = $request->travelDate;
 
-            $data = DB::table('routes')
-                    ->join('terminals', 'routes.st_tem_id', '=', 'terminals.id')
-                    // ->join('orders', 'users.id', '=', 'orders.user_id')
-                    ->select('routes.*', 'terminals.name as terminal')
-                    ->where('terminals.name', '=', $start_terminal, 'and', 'routes.end_terminal', '=', $end_terminal)
-                    ->get();
-            $data1 = DB::table('trips')
-                    ->join('routes', 'routes.trip_id', '=', 'trips.id')
-                    ->join('terminals', 'routes.st_tem_id', '=', 'terminals.id')
-                    ->select('trips.*', 'terminals.name as terminal', 'routes.end_terminal', 'routes.price as price')
-                    ->where('terminals.name', '=', $start_terminal, 'and', 'routes.end_terminal', '=', $end_terminal, 'and', 'trips.departure', '=', $travel_date, 'and', 'trips.status', '=', 'pending')
-                    ->get();
-        
-        return view('frontend.route')->with(['data' => $data, 'end_terminal' => $end_terminal, 'start_terminal' => $start_terminal, 'travel_date' => $travel_date]);
+           
+            $data = DB::table('trips')
+                ->join('routes', 'routes.id', '=', 'trips.route_id')
+                ->join('terminals', 'terminals.id', '=', 'routes.st_tem_id')
+                ->select('trips.*', 'terminals.name as start_terminal', 'routes.end_terminal', 'routes.price', "trips.departure as departure")
+                ->where('routes.end_terminal', 'like', '%' . $end_terminal . '%')
+                ->where('terminals.name', 'like', '%' . $start_terminal . '%')
+                ->where('departure', 'like', '%' . $travel_date . '%')
+                ->where('trips.status', '=', 'pending')
+                ->get();
+
+            $all_terminals = DB::table('terminals')
+                ->select('terminals.name')
+                ->get();
+
+
+        return view('frontend.route')->with(['data' => $data, 'end_terminal' => $end_terminal, 'start_terminal' => $start_terminal, 'travel_date' => $travel_date, 'all_terminals' => $all_terminals]);
     }
 
     public function BusHiring(){
