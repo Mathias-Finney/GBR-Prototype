@@ -13,8 +13,7 @@ use App\Http\Controllers\TerminalController;
 use App\Http\Controllers\Backend\BusController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\BusHiringController;
-
-
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -166,6 +165,16 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/edit/trip/{id}', 'EditTrip')->name('edit.trip');
         Route::post('/update/trip', 'UpdateTrip')->name('update.trip');
         Route::get('/delete/trip/{id}', 'DeleteTrip')->name('delete.trip');
+
+    });
+
+    Route::controller(TicketController::class)->group(function(){
+        Route::get('/all/tickets', 'AllTicket')->name('all.ticket');
+        Route::get('/add/ticket', 'AddTicket')->name('add.ticket');
+        Route::post('/store/ticket', 'StoreTicket')->name('store.ticket');
+        Route::get('/edit/ticket/{id}', 'EditTicket')->name('edit.ticket');
+        Route::post('/update/ticket', 'UpdateTicket')->name('update.ticket');
+        Route::get('/delete/ticket/{id}', 'DeleteTicket')->name('delete.ticket');
 
     });
 });
