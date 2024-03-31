@@ -76,7 +76,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Daparture Time</label>
-                            <input type="datetime-local" step="0.01" class="form-control @error('departure') is-invalid @enderror" 
+                            <input type="datetime-local" class="form-control @error('departure') is-invalid @enderror" 
                             name="departure" value="{{ old('departure') }}">
                             @error('departure')
                                 <div class="text-danger">{{ $message }}</div>
@@ -84,7 +84,7 @@
                         </div> 
                         <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Estimated Time Of Arrival</label>
-                            <input type="datetime-local" step="0.01" class="form-control @error('eta') is-invalid @enderror" 
+                            <input type="datetime-local" class="form-control @error('eta') is-invalid @enderror" 
                             name="eta" value="{{ old('eta') }}">
                             @error('eta')
                                 <div class="text-danger">{{ $message }}</div>
