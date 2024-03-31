@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ticket_id')->constrained('ticket')->onUpdate('cascade')->onDelete('cascade');
             $table->string('amount');
             $table->enum('mobile_money_provider', ['mtn', 'at', 'telecel'])->default('mtn');
             $table->string('mobile_money_account');
