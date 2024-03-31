@@ -7,7 +7,7 @@
 <div class="page-content">    
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a class="btn btn-inverse-info" href="{{ route('all.trip') }}">Go Back</a>
+            <a class="btn btn-inverse-info" href="{{ route('all.ticket') }}">Go Back</a>
         </ol>
     </nav> 
           
@@ -21,9 +21,9 @@
             <div class="card">
                 <div class="card-body">
   
-                    <h6 class="card-title">ADD TRIP</h6>
+                    <h6 class="card-title">GENERATE TICKET</h6>
 
-                    <form method="post" action="{{ route('store.trip')}}" class="forms-sample" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('store.ticket')}}" class="forms-sample" enctype="multipart/form-data">
                         @csrf
                         
                         <div class="mb-3">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Daparture Time</label>
-                            <input type="datetime-local" class="form-control @error('departure') is-invalid @enderror" 
+                            <input type="datetime-local" step="0.01" class="form-control @error('departure') is-invalid @enderror" 
                             name="departure" value="{{ old('departure') }}">
                             @error('departure')
                                 <div class="text-danger">{{ $message }}</div>
@@ -84,7 +84,7 @@
                         </div> 
                         <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Estimated Time Of Arrival</label>
-                            <input type="datetime-local" class="form-control @error('eta') is-invalid @enderror" 
+                            <input type="datetime-local" step="0.01" class="form-control @error('eta') is-invalid @enderror" 
                             name="eta" value="{{ old('eta') }}">
                             @error('eta')
                                 <div class="text-danger">{{ $message }}</div>
