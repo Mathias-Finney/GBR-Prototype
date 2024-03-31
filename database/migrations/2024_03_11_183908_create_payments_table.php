@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('amount');
             $table->enum('mobile_money_provider', ['MTN', 'AIRTEL-TIGO', 'VODAFONE'])->default('MTN');
             $table->string('mobile_money_account');
