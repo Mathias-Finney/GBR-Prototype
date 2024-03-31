@@ -74,14 +74,6 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="exampleInputUsername1"  class="form-label">Bus Condition</label>
-                            <input type="text" class="form-control @error('condition') is-invalid @enderror" 
-                            name="condition" >
-                            @error('condition')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div> --}}
                         <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Bus Condition</label>
                             <Select type="text" class="form-control @error('condition') is-invalid @enderror" 
@@ -94,15 +86,6 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        
-                        {{-- <div class="mb-3">
-                            <label for="exampleInputUsername1"  class="form-label"> Bus Status</label>
-                            <input type="text" class="form-control @error('status') is-invalid @enderror" 
-                            name="status" >
-                            @error('status')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div> --}}
                         <div class="mb-3">
                             <label for="exampleInputUsername1"  class="form-label">Bus Status</label>
                             <Select type="text" class="form-control @error('condition') is-invalid @enderror" 

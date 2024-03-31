@@ -432,6 +432,14 @@
 
 .routes-page .route-form form .button-container button{
     width: 70%;
+    background-color: #0155C2;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.routes-page .route-form form .button-container button:hover{
+    background-color: #FF7A00;
 }
 
 .routes-page .route-table {
@@ -467,6 +475,123 @@
 .routes-page .route-form .list-items:hover {
     background-color: #dddddd;
 }
+
+/* Route Payment Modal 1 */
+.modal1 .modal-content {
+    border: 2px solid #0155C2;
+}
+
+.modal1 .modal-title {
+    color: #FF7A00;
+}
+
+.modal1 .modal-body .summary-group {
+    margin-bottom: 9px;
+    transition: 1s;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.modal1 .modal-body .summary-group2 {
+    margin-bottom: 9px;
+    transition: 1s;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.modal1 .modal-body .summary-group:hover {
+    padding: 20px 12px 20px 12px;
+    box-shadow: 0.5rem .5rem 0.3rem #dedede;
+    background-color: rgb(251, 251, 251);
+    font-size: 19px;
+
+}
+
+.modal1 .modal-body .summary-group2:hover {
+    padding: 20px 12px 20px 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0.5rem .5rem 0.3rem #dedede;
+    font-size: 19px;
+    background-color: rgb(251, 251, 251);
+
+}
+.modal1 .modal-body .summary-group .summary-header {
+    /* font-size: 20px; */
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5px;
+    color: #0155C2;
+}
+
+.modal1 .modal-body .summary-group2 label {
+    /* font-size: 20px; */
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5px;
+    color: #0155C2;
+}
+
+.modal1 .modal-body .summary-group hr{
+    width: 10rem;
+    margin-left: 4px;
+    margin-top: 0;
+    margin-bottom: 9px;
+    transition: 1s;
+}
+
+.modal1 .modal-body .summary-group .travelTo-rule{
+    width: 9rem;   
+}
+.modal1 .modal-body .summary-group .eta-rule{
+    width: 19rem;   
+}
+
+.modal1 .modal-body .summary-group .summary-info{
+    margin-top: 0;
+    padding-left: 6px;
+}
+
+
+/* Route Payment Modal 2 */
+.modal2 .modal-content {
+    border: 2px solid #FF7A00;
+}
+
+.modal2 .modal-title {
+    color: #0155C2;
+}
+
+.modal2 .modal-body label {
+    color: #FF7A00;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+}
+
+.modal2 .modal-footer .btn1{
+    background-color: #FF7A00;
+    color: white;;
+    font-size: 16px;
+}
+
+.modal2 .modal-footer .btn1:hover{
+    background-color: #0155C2;
+}
+
+.modal2 .modal-footer .btn2{
+    background-color: #0155C2;
+    color: white;
+    font-size: 16px;
+}
+
+.modal2 .modal-footer .btn2:hover{
+    background-color: #FF7A00;
+}
+
+
+
 
 /* Bus Hiring Page */
 
@@ -587,6 +712,11 @@
 .about-page .about-info1 p{
     font-size: 17px;
 }
+
+
+
+
+
 
 
 

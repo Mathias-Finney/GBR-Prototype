@@ -38,6 +38,9 @@ Route::post('/route', [UserController::class, 'RouteSearch'])->name('routepageSe
 Route::get('/busHiring', [UserController::class, 'BusHiring'])->name('busHiring');
 Route::get('/aboutus', [UserController::class, 'AboutUs'])->name('aboutUs');
 
+//trip payment
+Route::post('/pay', [UserController::class, 'tripPayment'])->name('trip.pay');
+
 
 // Bus Hiring Frontend 
 Route::post('/busHire', [BusHiringController::class, 'StoreBusHiring'])->name('user.store.busHiring');

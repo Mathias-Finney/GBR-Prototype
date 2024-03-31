@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('ticket_id')->constrained('ticket')->onUpdate('cascade')->onDelete('cascade');
             $table->string('amount');
-            $table->enum('mobile_money_provider', ['MTN', 'AIRTEL-TIGO', 'VODAFONE'])->default('MTN');
+            $table->enum('mobile_money_provider', ['mtn', 'at', 'telecel'])->default('mtn');
             $table->string('mobile_money_account');
             $table->enum('status', ['Completed', 'Pending', 'Failed'])->default('Pending');
             $table->timestamp('transaction_date');
