@@ -14,6 +14,7 @@ class Ticket extends Model
         'expiry_date',
         'price',
         'status',
+        'payment_id',
         'user_id',
         'trip_id',
     ];

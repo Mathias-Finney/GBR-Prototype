@@ -10,7 +10,6 @@ class Payment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'amount',
         'mobile_money_provider',
         'mobile_money_account',
@@ -21,6 +20,7 @@ class Payment extends Model
     static public function getRecord()
     {
         $return = self::select('payments.*', 'users.name as user')
+                        ->join('tickets', 'tickets.id', 'id')
                         ->join('users', 'users.id', 'user_id')
                         ->orderBy('users.name', 'asc')
                         ->get();

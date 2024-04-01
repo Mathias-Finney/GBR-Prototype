@@ -1,28 +1,28 @@
-*{
+* {
     font-family: "Ubuntu", sans-serif;
 }
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 /* Navbar */
-.navbar .navbar-nav .nav-item{
+.navbar .navbar-nav .nav-item {
     font-weight: 500;
 }
-.navbar .navbar-brand img{
+.navbar .navbar-brand img {
     height: 35px;
     width: 100px;
 }
-.navbar .navbar-brand span{
+.navbar .navbar-brand span {
     font-weight: 600;
     font-size: 2rem;
 }
 
-.navbar .navbar-nav li a span{
-    color: #0155C2;
-    transition: .5s;
+.navbar .navbar-nav li a span {
+    color: #0155c2;
+    transition: 0.5s;
 }
 
-.navbar .navbar-nav li span:hover{
-    color: #FF7A00;
+.navbar .navbar-nav li span:hover {
+    color: #ff7a00;
     text-decoration: underline;
     font-size: 1.2rem;
 }
@@ -31,42 +31,41 @@
     display: none;
 }
 
-.navbar .icon{
+.navbar .icon {
     padding-right: 0px;
     font-weight: 500;
     padding-left: 0;
     margin-right: 0;
 }
 
-.navbar .icon i{
+.navbar .icon i {
     font-size: 1.3rem;
     background-color: rgb(231, 244, 255);
 }
 
-
-.navbar .nav-item img{
+.navbar .nav-item img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     margin-left: 0;
 }
 
-.navbar .dropdown-menu{
+.navbar .dropdown-menu {
     --bs-dropdown-min-width: none;
 }
 
-.navbar .dropdown-menu li{
+.navbar .dropdown-menu li {
     padding-left: 5px;
     padding-right: 20px;
 }
 
-.navbar .dropdown-menu .profile-image{
+.navbar .dropdown-menu .profile-image {
     text-align: center;
     justify-content: center;
     padding: 10px 0;
     margin-bottom: 20px;
 }
-.navbar .dropdown-menu li img{
+.navbar .dropdown-menu li img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -74,8 +73,8 @@
     margin-bottom: 10px;
 }
 
-.navbar .dropdown-menu li .bi{
-    color: #0155C2;
+.navbar .dropdown-menu li .bi {
+    color: #0155c2;
     font-size: 1.4rem;
     margin-right: 4px;
     font-weight: 500;
@@ -86,26 +85,25 @@
 /* home page  */
 /* large image */
 
-.front-image{
+.front-image {
     width: 100%;
     margin-top: 10px;
-   
 }
 
-.front-image img{
+.front-image img {
     width: 100%;
     height: 50%;
 }
 
 /* large image end */
 
-.body{
-   margin: 0 3%;
-   align-items: center;
-   justify-content: center;
+.body {
+    margin: 0 3%;
+    align-items: center;
+    justify-content: center;
 }
 
-.body-cards{
+.body-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -114,7 +112,7 @@
     padding: 20px 0;
     margin-bottom: 20px;
 }
-.body-cards .card{
+.body-cards .card {
     height: 210px;
     padding: 10px;
     margin: 20px 34px 20px 34px;
@@ -124,23 +122,22 @@
     border-bottom: 1px solid #0155c2;
     transition: 1s;
 }
-.body-cards .card:hover{
+.body-cards .card:hover {
     border: 1px solid #0155c2;
     background-color: rgb(239, 238, 254);
     height: 225px;
-    
 }
-.card i{
+.card i {
     font-size: 40px;
     color: #0155c2;
 }
-.card h5{
+.card h5 {
     color: #0155c2;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
-.card p{
+.card p {
     color: #ff7a00;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
@@ -148,24 +145,23 @@
     font-size: 25px;
 }
 
-.statement{
+.statement {
     padding: 20px 0;
-    padding-bottom: 20px; 
-    
+    padding-bottom: 20px;
 }
-.statement .msg{
+.statement .msg {
     padding: 20px;
     width: 50%;
 }
-.statement .msg h5{
+.statement .msg h5 {
     color: #0155c2;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 35px;  
-    line-height: -20px; 
+    font-size: 35px;
+    line-height: -20px;
 }
-.statement .msg p{
+.statement .msg p {
     /* color: #ff7a00; */
     color: #656565;
     font-family: "Ubuntu", sans-serif;
@@ -175,62 +171,60 @@
     line-height: -20px;
 }
 
-.statement .logo1{
+.statement .logo1 {
     width: 50%;
     text-align: center;
     justify-content: center;
     padding-top: 40px;
-   
-} 
+}
 .statement .logo1 img {
     width: 100%;
     height: 70%;
-    
 }
-.smart{
+.smart {
     /* height: 600px; */
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5% 0;
-    padding: 20px ;
+    padding: 20px;
     background-color: whitesmoke;
     padding-bottom: 20px;
     flex-wrap: wrap;
 }
-.smart-img{
+.smart-img {
     width: 50%;
 }
-.smart-img img{
+.smart-img img {
     width: 100%;
 }
-.smart-info{
+.smart-info {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.smart-info h2{
+.smart-info h2 {
     color: #0155c2;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 45px;
 }
-.smart-info h3{
+.smart-info h3 {
     color: #0155c2;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 35px;
 }
-.smart-info .h3-bck{
+.smart-info .h3-bck {
     background-color: #ff7a00;
     border-radius: 20px;
     padding: 10px;
 }
-.smart-info p{
+.smart-info p {
     color: #ff7a00;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
@@ -238,15 +232,12 @@
     font-size: 25px;
     line-height: -20px;
 }
-.smart-info ul{
+.smart-info ul {
     list-style: none;
     padding-inline-start: 0px;
-
 }
 
-
-
-.smart-info ul li{
+.smart-info ul li {
     display: flex;
     text-decoration: none;
     font-size: 25px;
@@ -254,9 +245,9 @@
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     line-height: -20px;
-    text-wrap:wrap ;
+    text-wrap: wrap;
 }
-.smart-info ul li i{
+.smart-info ul li i {
     color: #0155c2;
     padding-right: 10px;
 }
@@ -264,9 +255,9 @@
 /* home page end  */
 
 /* footer */
-.gbras-footer{
+.gbras-footer {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 30px;
     background-color: whitesmoke;
@@ -279,99 +270,93 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-
 }
-.gbras-footer .footer-logo{
+.gbras-footer .footer-logo {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    
 }
-.gbras-footer .footer-logo img{
+.gbras-footer .footer-logo img {
     width: 70%;
     margin-bottom: 20px;
 }
-.gbras-footer .footer-logo .social-icon{
+.gbras-footer .footer-logo .social-icon {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.gbras-footer .footer-logo .social-icon i{
+.gbras-footer .footer-logo .social-icon i {
     color: #ff7a00;
     margin: 3px;
 }
-.gbras-footer .footer-logo .social-icon i:hover{
+.gbras-footer .footer-logo .social-icon i:hover {
     color: #0155c2;
 }
-.gbras-footer .footer-support{
+.gbras-footer .footer-support {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    
 }
-.gbras-footer .footer-about{
+.gbras-footer .footer-about {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    
 }
-.gbras-footer .footer-email{
+.gbras-footer .footer-email {
     display: flex;
     flex-direction: column;
     padding: 30px;
     width: 100%;
 }
-.gbras-footer .footer-support .head{
+.gbras-footer .footer-support .head {
     color: #0155c2;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 30px;
 }
 
-.gbras-footer .footer-support a{
+.gbras-footer .footer-support a {
     text-decoration: none;
-    
 }
 
-.gbras-footer .footer-support a p:hover{
+.gbras-footer .footer-support a p:hover {
     border-bottom: 2px solid #0155c2;
 }
-.gbras-footer .footer-support p{
+.gbras-footer .footer-support p {
     color: #ff7a00;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 25px;
     transition: 1s;
 }
-.gbras-footer .footer-about .head{
+.gbras-footer .footer-about .head {
     color: #0155c2;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 30px;
 }
 
-.gbras-footer .footer-about a{
+.gbras-footer .footer-about a {
     text-decoration: none;
-    
 }
-.gbras-footer .footer-about p{
+.gbras-footer .footer-about p {
     color: #ff7a00;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 20px;
     transition: 1s;
 }
-.gbras-footer .footer-about a p:hover{
+.gbras-footer .footer-about a p:hover {
     border-bottom: 2px solid #0155c2;
 }
-.gbras-footer .footer-email p{
+.gbras-footer .footer-email p {
     color: #0155c2;
     font-family: "ubuntu", sans-serif;
     font-weight: 500;
     font-size: 20px;
     margin-bottom: 30px;
 }
-.gbras-footer .footer-email input{
+.gbras-footer .footer-email input {
     width: 100%;
     height: 45px;
     border: 1px solid #ff7a00;
@@ -379,7 +364,7 @@
     font-family: "ubuntu", sans-serif;
     font-weight: 300;
 }
-.gbras-footer .footer-email button{
+.gbras-footer .footer-email button {
     width: 90px;
     background-color: #ff7a00;
     padding: 10px;
@@ -387,7 +372,7 @@
     font-weight: 300;
     border-radius: 10px;
 }
-.gbras-footer .footer-email button:hover{
+.gbras-footer .footer-email button:hover {
     background-color: transparent;
     outline: #ff7a00;
     color: #ff7a00;
@@ -400,46 +385,45 @@
     margin-top: 10rem;
 }
 
-
 /* route frontend */
 
-.routes-page .route-head{
+.routes-page .route-head {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.routes-page .route-head h1{
-    color: #0155C2;
+.routes-page .route-head h1 {
+    color: #0155c2;
     font-weight: 600;
-    font-family:'Gill Sans';
+    font-family: "Gill Sans";
     font-size: 45px;
 }
 
-.routes-page .route-form{
+.routes-page .route-form {
     padding: 40px 180px;
 }
 
-.routes-page .route-form form label{
+.routes-page .route-form form label {
     font-weight: 600;
     font-size: 18px;
 }
 
-.routes-page .route-form form .button-container{
+.routes-page .route-form form .button-container {
     text-align: center;
     margin-top: 30px;
 }
 
-.routes-page .route-form form .button-container button{
+.routes-page .route-form form .button-container button {
     width: 70%;
-    background-color: #0155C2;
+    background-color: #0155c2;
     color: white;
     font-size: 17px;
     font-weight: 500;
 }
 
-.routes-page .route-form form .button-container button:hover{
-    background-color: #FF7A00;
+.routes-page .route-form form .button-container button:hover {
+    background-color: #ff7a00;
 }
 
 .routes-page .route-table {
@@ -448,7 +432,7 @@
 }
 
 .routes-page .route-table thead tr th {
-    color: #0155C2;
+    color: #0155c2;
     font-weight: 600;
 }
 
@@ -469,20 +453,66 @@
 
 .routes-page .route-form .list-items {
     padding: 10px 5px;
-   
 }
 
 .routes-page .route-form .list-items:hover {
     background-color: #dddddd;
 }
 
+/* Tooltip container */
+.routes-page .route-table .tooltip1 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.routes-page .route-table .tooltip1 .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #ff2c2c;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.routes-page .route-table .tooltip1 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ff2c2c transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.routes-page .route-table .tooltip1:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Route Payment Modal 1 */
 .modal1 .modal-content {
-    border: 2px solid #0155C2;
+    border: 2px solid #0155c2;
 }
 
 .modal1 .modal-title {
-    color: #FF7A00;
+    color: #ff7a00;
 }
 
 .modal1 .modal-body .summary-group {
@@ -501,40 +531,38 @@
 
 .modal1 .modal-body .summary-group:hover {
     padding: 20px 12px 20px 12px;
-    box-shadow: 0.5rem .5rem 0.3rem #dedede;
+    box-shadow: 0.5rem 0.5rem 0.3rem #dedede;
     background-color: rgb(251, 251, 251);
     font-size: 19px;
-
 }
 
 .modal1 .modal-body .summary-group2:hover {
     padding: 20px 12px 20px 12px;
     padding-top: 20px;
     padding-bottom: 20px;
-    box-shadow: 0.5rem .5rem 0.3rem #dedede;
+    box-shadow: 0.5rem 0.5rem 0.3rem #dedede;
     font-size: 19px;
     background-color: rgb(251, 251, 251);
-
 }
 .modal1 .modal-body .summary-group .summary-header {
     /* font-size: 20px; */
     margin-bottom: 0px;
     font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     padding-left: 5px;
-    color: #0155C2;
+    color: #0155c2;
 }
 
 .modal1 .modal-body .summary-group2 label {
     /* font-size: 20px; */
     margin-bottom: 5px;
     font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     padding-left: 5px;
-    color: #0155C2;
+    color: #0155c2;
 }
 
-.modal1 .modal-body .summary-group hr{
+.modal1 .modal-body .summary-group hr {
     width: 10rem;
     margin-left: 4px;
     margin-top: 0;
@@ -542,191 +570,172 @@
     transition: 1s;
 }
 
-.modal1 .modal-body .summary-group .travelTo-rule{
-    width: 9rem;   
+.modal1 .modal-body .summary-group .travelTo-rule {
+    width: 9rem;
 }
-.modal1 .modal-body .summary-group .eta-rule{
-    width: 19rem;   
+.modal1 .modal-body .summary-group .eta-rule {
+    width: 19rem;
 }
 
-.modal1 .modal-body .summary-group .summary-info{
+.modal1 .modal-body .summary-group .summary-info {
     margin-top: 0;
     padding-left: 6px;
 }
 
-
 /* Route Payment Modal 2 */
 .modal2 .modal-content {
-    border: 2px solid #FF7A00;
+    border: 2px solid #ff7a00;
 }
 
 .modal2 .modal-title {
-    color: #0155C2;
+    color: #0155c2;
 }
 
 .modal2 .modal-body label {
-    color: #FF7A00;
-    font-family: 'Times New Roman', Times, serif;
+    color: #ff7a00;
+    font-family: "Times New Roman", Times, serif;
     font-size: 19px;
 }
 
-.modal2 .modal-footer .btn1{
-    background-color: #FF7A00;
-    color: white;;
-    font-size: 16px;
-}
-
-.modal2 .modal-footer .btn1:hover{
-    background-color: #0155C2;
-}
-
-.modal2 .modal-footer .btn2{
-    background-color: #0155C2;
+.modal2 .modal-footer .btn1 {
+    background-color: #ff7a00;
     color: white;
     font-size: 16px;
 }
 
-.modal2 .modal-footer .btn2:hover{
-    background-color: #FF7A00;
+.modal2 .modal-footer .btn1:hover {
+    background-color: #0155c2;
 }
 
+.modal2 .modal-footer .btn2 {
+    background-color: #0155c2;
+    color: white;
+    font-size: 16px;
+}
 
-
+.modal2 .modal-footer .btn2:hover {
+    background-color: #ff7a00;
+}
 
 /* Bus Hiring Page */
 
-.busHiring-page .busHiring-head{
+.busHiring-page .busHiring-head {
     margin-top: 4rem;
     text-align: center;
     margin-bottom: 6rem;
 }
 
-.busHiring-page .busHiring-head h1{
-    color: #0155C2;
+.busHiring-page .busHiring-head h1 {
+    color: #0155c2;
     font-weight: 600;
-    font-family:'Gill Sans';
+    font-family: "Gill Sans";
     font-size: 45px;
 }
 
-.busHiring-page .busHiring-container{
+.busHiring-page .busHiring-container {
     padding-left: 13rem;
     padding-right: 13rem;
     flex-wrap: wrap;
 }
 
-.busHiring-page .busHiring-info{
+.busHiring-page .busHiring-info {
     color: #656565;
     padding-top: 5rem;
     padding-right: 2rem;
 }
 
-.busHiring-page .busHiring-info .busHiring-info-head{
+.busHiring-page .busHiring-info .busHiring-info-head {
     color: #ff7a00;
     font-weight: 400;
-    font-family:'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 35px;
 }
 
-.busHiring-page .busHiring-info p, ul{
+.busHiring-page .busHiring-info p,
+ul {
     font-size: 17px;
 }
 
 .busHiring-page .busHiring-form {
     padding: 35px;
-    
 }
 
-.busHiring-page .busHiring-form form h2{
+.busHiring-page .busHiring-form form h2 {
     text-align: center;
-    color: #0155C2;
+    color: #0155c2;
     font-weight: 600;
     font-size: 40px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     margin-bottom: 40px;
-
 }
 
-.busHiring-page .busHiring-form form div{
-    margin-top: .5rem;
+.busHiring-page .busHiring-form form div {
+    margin-top: 0.5rem;
 }
 
-.busHiring-page .busHiring-form form .btn{
-    background-color: #FF7A00;
+.busHiring-page .busHiring-form form .btn {
+    background-color: #ff7a00;
     color: white;
     width: 100%;
     margin-top: 1.5rem;
 }
 
-.busHiring-page .busHiring-form form .btn:hover{
+.busHiring-page .busHiring-form form .btn:hover {
     background-color: #0155c2;
 }
 
-
 /* about us page  */
 
-.about-page .about-head{
+.about-page .about-head {
     margin-top: 4rem;
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.about-page .about-head h1{
-    color: #0155C2;
+.about-page .about-head h1 {
+    color: #0155c2;
     font-weight: 600;
-    font-family:'Gill Sans';
+    font-family: "Gill Sans";
     font-size: 45px;
 }
 
-.about-page .about-container{
+.about-page .about-container {
     padding-left: 10rem;
     padding-right: 10rem;
 }
 
-.about-page .about-image{
+.about-page .about-image {
     width: 100%;
     padding: 0;
     margin: 0;
     margin-bottom: 3rem;
 }
 
-.about-page .about-image img{
+.about-page .about-image img {
     width: 100%;
     max-height: 550px;
 }
 
-.about-page .about-info{
+.about-page .about-info {
     color: #656565;
 }
 
-.about-page .about-info1{
+.about-page .about-info1 {
     margin-top: 2rem;
 }
 
-.about-page .about-info .about-info-head{
+.about-page .about-info .about-info-head {
     color: #ff7a00;
     font-weight: 400;
-    font-family:'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 25px;
 }
 
-.about-page .about-info1 p{
+.about-page .about-info1 p {
     font-size: 17px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 993px)
-{
+@media (max-width: 993px) {
     /* navbar signin and register icons/tabs */
     .navbar .navbar-nav .sign-reg1 {
         display: none;
@@ -736,101 +745,87 @@
     }
 }
 
-
-
-
-
-@media (max-width: 1500px) 
-{
- 
+@media (max-width: 1500px) {
     /* Bus Hiring Page */
 
-    .busHiring-page .busHiring-container{
+    .busHiring-page .busHiring-container {
         padding-left: 10rem;
         padding-right: 10rem;
         justify-content: center;
         align-items: center;
     }
 
-    .busHiring-page .busHiring-info{
+    .busHiring-page .busHiring-info {
         width: 100%;
         max-width: 43rem;
     }
 
-    .busHiring-page .busHiring-form{
+    .busHiring-page .busHiring-form {
         width: 100%;
         margin-top: 5rem;
         margin-left: 1rem;
         /* margin-right: 1rem; */
         max-width: 53rem;
-        
     }
 
-    .busHiring-page .busHiring-form form{
+    .busHiring-page .busHiring-form form {
         width: 100%;
-        
     }
 
-    .busHiring-page .busHiring-form form h2{
+    .busHiring-page .busHiring-form form h2 {
         font-size: 30px;
     }
 
     /* about us page */
-    .about-page .about-container{
+    .about-page .about-container {
         padding-left: 5rem;
         padding-right: 5rem;
     }
-
 }
 
-
-
-@media (max-width: 1000px) 
-{
+@media (max-width: 1000px) {
     .statement .msg {
         width: 100%;
     }
     .statement .logo1 {
         display: none;
     }
-    .smart .smart-img{
+    .smart .smart-img {
         width: 100%;
         text-align: center;
         justify-content: center;
-        
     }
 
-    .smart .smart-img img{
+    .smart .smart-img img {
         height: 300px;
         width: 60%;
-        
     }
 
-    .smart .smart-info{
+    .smart .smart-info {
         width: 100%;
         /* text-align: left; */
     }
 
-    .smart-info h2{
+    .smart-info h2 {
         font-size: 34px;
         text-align: center;
     }
 
-    .smart-info h3{
+    .smart-info h3 {
         font-size: 29px;
         text-align: center;
     }
 
-    .smart-info p{
+    .smart-info p {
         font-size: 23px;
     }
 
-    .smart-info ul li{
+    .smart-info ul li {
         font-size: 20px;
     }
 
     /* route table */
-    .routes-page .route-form{
+    .routes-page .route-form {
         padding: 40px 80px;
     }
 
@@ -841,51 +836,44 @@
 
     /* Bus Hiring Page */
 
-    .busHiring-page .busHiring-container{
+    .busHiring-page .busHiring-container {
         padding-left: 3rem;
         padding-right: 3rem;
-        
     }
 
     /* about us page */
-    .about-page .about-container{
+    .about-page .about-container {
         padding-left: 3rem;
         padding-right: 3rem;
     }
-
 }
 
-@media (max-width: 533px)
-{
-    .busHiring-page .busHiring-form form div{
+@media (max-width: 533px) {
+    .busHiring-page .busHiring-form form div {
         width: 100%;
     }
 
     .busHiring-page .busHiring-form {
         padding: 25px;
-        
     }
 
-    .busHiring-page .busHiring-container{
+    .busHiring-page .busHiring-container {
         padding-left: 1.3rem;
         padding-right: 1.3rem;
-        
     }
 
     /* about us page */
-    .about-page .about-container{
+    .about-page .about-container {
         padding-left: 1.2rem;
         padding-right: 1.2rem;
     }
-
 }
-@media (max-width: 500px)
-{
-    .navbar .navbar-brand span{
+@media (max-width: 500px) {
+    .navbar .navbar-brand span {
         font-size: 1.5rem;
     }
 
-    .routes-page .route-form{
+    .routes-page .route-form {
         padding: 40px 40px;
     }
 
@@ -895,13 +883,12 @@
     }
 }
 
-@media (max-width: 314px)
-{
-    .navbar .navbar-brand span{
+@media (max-width: 314px) {
+    .navbar .navbar-brand span {
         font-size: 1.2rem;
     }
 
-    .navbar .navbar-brand img{
+    .navbar .navbar-brand img {
         height: 20px;
         width: 70px;
     }
@@ -913,18 +900,16 @@
 
     .busHiring-page .busHiring-form {
         padding: 15px;
-        
     }
 
-    .busHiring-page .busHiring-container{
-        padding-left: .8rem;
-        padding-right: .8rem;
-        
+    .busHiring-page .busHiring-container {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
     }
 
     /* about us page */
-    .about-page .about-container{
-        padding-left: .7rem;
-        padding-right: .7rem;
+    .about-page .about-container {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
     }
 }

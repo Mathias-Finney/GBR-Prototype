@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('issue_date');
+            $table->timestamp('issue_date');
             $table->dateTime('expiry_date');
-            $table->string('price');
-            $table->string('status');
+            $table->double('price');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('trip_id')->constrained('trips')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('payment_id')->constrained('payments')->onUpdate('cascade')->onDelete('cascade');

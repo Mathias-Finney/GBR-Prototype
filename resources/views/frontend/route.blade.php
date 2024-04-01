@@ -77,16 +77,23 @@
                             <?php $ID = $data[$num]->id ?>
                             
                             <td class="text-success">
-                              <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $ID;?>" >
+                              <button type="button" class="btn btn-outline-success @guest tooltip1 @endguest" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $ID;?>" >
                                 Book
+                                @guest<span class="tooltiptext">Can't Book Unless You Sign In</span>@endguest
                               </button>
+                              
                             </td>
                         </tr>
+
+                        @auth   {{-- payment modal  --}}
+                            @include('frontend.components.paymentModal')
+                        @endauth
+
+
                     @endfor
                 </tbody>
             </table>
-            {{-- payment modal  --}}
-            @include('frontend.components.paymentModal')
+            
             
 
         </div>

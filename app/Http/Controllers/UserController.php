@@ -6,8 +6,11 @@ use App\Models\Bus;
 use App\Models\Route;
 use App\Models\Terminal;
 use App\Models\Trip;
+use App\Models\Ticket;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -30,7 +33,6 @@ class UserController extends Controller
                 ->get();
 
         $all_terminals = DB::table('terminals')
-                        // ->select('terminals.name')
                         ->select(DB::raw("CONCAT(terminals.name, ' ( ', terminals.location, ' )') AS name"))
                         ->get();
 
@@ -71,18 +73,68 @@ class UserController extends Controller
 
     public function tripPayment(Request $request){
 
-
-        $trip = Trip::findOrFail($request->tripID);
+        $loopNumber = $request->loopNumber;
+        $tripID = 'tripID'.$loopNumber;
+        $tripid = $request->$tripID;
+        $numberOfTickets = 'numberOfTickets'.$loopNumber;
+        $numberOfTickets = $request->$numberOfTickets;
+        $payNetwork = 'payNetwork'.$loopNumber;
+        $mobile_money_provider = $request->$payNetwork;
+        $phone = 'phone'.$loopNumber;
+        $mobile_money_account = $request->$phone;
+        
+        // dd($trip);
+        $trip = Trip::findOrFail($tripid);
         $route = Route::findOrFail($trip->route_id);
         $terminal = Terminal::findOrFail($route->st_tem_id);
         $bus = Bus::findOrFail($trip->bus_id);
 
+        $amount = $numberOfTickets * $route->price;
+
         $request->validate([
-            'tripID' => ['numeric', 'required'],
-            'numberOfTickets' => ['numeric', 'required', 'min:1', 'max:$bus->capacity',],
-            'payNetwork'=> 'required | max:7 | in:mtn, telecel,at | alpha',
-            'phone1' => ['required', 'numeric', 'max_digits:9', 'min_digits:9'],
+            'tripID'.$loopNumber => ['numeric', 'required'],
+            'numberOfTickets'.$loopNumber => ['numeric', 'required', 'min:1', 'max:'.$bus->capacity],
+            'payNetwork'.$loopNumber => ['required', 'max:7', 'in:mtn,telecel,at', 'alpha'],
+            'phone'.$loopNumber => ['required', 'numeric', 'max_digits:9', 'min_digits:9'],
+        ],[],
+        [
+            'tripID'.$loopNumber => 'TripId',
+            'numberOfTickets'.$loopNumber => 'Number Of Tickets',
+            'payNetwork'.$loopNumber => 'Pay Network',
+            'phone'.$loopNumber => 'Phone',
         ]);
+
+        $payData = Payment::create([
+            'amount' => $amount,
+            'mobile_money_provider' => $mobile_money_provider,
+            'mobile_money_account' => $mobile_money_account,
+        ]);
+
+        // dd($payData->id);
+
+        // creating tickets 
+        $ticketData = [];
+        try {
+            for($i = 1; $i <= $numberOfTickets; $i++){
+
+               $ticket = Ticket::create([
+                    'expiry_date' => $trip->departure,
+                    'price' => $route->price,
+                    'user_id' => Auth::user()->id,
+                    'trip_id' => $trip->id,
+                    'payment_id' => $payData->id
+                ]);
+
+                $ticketData[] = $ticket;
+            }
+
+        }catch (\Exception $e){
+
+            Payment::findOrFail($payData->id)->delete();
+        }
+
+        return view('frontend.viewTickets')->with(['payment' => $payData,'trip' => $trip,'route' => $route,'ticket' => $ticketData]);
+
     }
 
     public function BusHiring(){
