@@ -1,5 +1,4 @@
 <x-guest-layout>
-
     
     <div class="busHiring-page">
         <div class="busHiring-head">

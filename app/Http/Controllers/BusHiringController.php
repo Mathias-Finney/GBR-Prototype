@@ -182,7 +182,7 @@ class BusHiringController extends Controller
             $message = 'Bus Hiring Declined';
         }
         $notification = array(
-            'message' => 'Bus Hiring Successfully',
+            'message' => $message,
             'alert-type' => 'success'
         );
         

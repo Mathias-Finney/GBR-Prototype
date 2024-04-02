@@ -19,8 +19,5 @@ class Ticket extends Model
         'trip_id',
     ];
 
-    static public function getRecord()
-    {
-        // $return = self::join()
-    }
+    
 }

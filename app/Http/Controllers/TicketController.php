@@ -5,14 +5,48 @@ namespace App\Http\Controllers;
 use App\Models\Ticket;
 use App\Models\Trip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TicketController extends Controller
 {
     // START METHOD
     public function AllTicket(){
-        $data = Ticket::getRecord();
+        $data = DB::table('tickets')
+            ->join('trips', 'trips.id', '=', 'tickets.trip_id')
+            ->join('routes', 'routes.id', '=', 'trips.route_id')
+            ->join('terminals', 'terminals.id', '=', 'routes.st_tem_id')
+            ->select('tickets.*', 'terminals.name as terminal_name', 'terminals.location as terminal_location', 'routes.end_terminal as destination', 'routes.name as route_name', 'trips.departure as departure', 'trips.eta as eta')
+            ->get();
+
         return view('backend.tickets.all_ticket',compact('data'));
     }//END METHOD
+
+    public function UpdateTicketStatus(Request $request){
+
+        $id = $request->id;
+        $status = $request->status;
+        $message = '';
+
+        // dd($id, $status);
+
+        Ticket::findOrFail($id)->update([
+            'status' => $status,
+        ]);
+
+        if($status == 'active'){
+            $message = 'Ticket has been Activated';
+        }
+        if($status == 'inactive'){
+            $message = 'Ticket has been Deactivated';
+        }
+        $notification = array(
+            'message' => $message,
+            'alert-type' => 'success'
+        );
+        
+
+        return redirect()->route('all.ticket')->with($notification);
+   }// END METHOD
 
     // START METHOD
     public function AddTicket(){

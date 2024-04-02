@@ -20,7 +20,7 @@ class Payment extends Model
     static public function getRecord()
     {
         $return = self::select('payments.*', 'users.name as user')
-                        ->join('tickets', 'tickets.id', 'id')
+                        ->join('tickets', 'tickets.id', 'payments.id')
                         ->join('users', 'users.id', 'user_id')
                         ->orderBy('users.name', 'asc')
                         ->get();

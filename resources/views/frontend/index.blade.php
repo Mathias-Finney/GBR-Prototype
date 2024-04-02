@@ -11,40 +11,17 @@
     <link rel="icon" href="{{ asset('front/images/G-BRaS LOGO@2x.png') }}">
     <title>Online TIcket</title>
 </head>
-<body>
+<body class="homepage">
     @include('layouts.navbar')
     @include('layouts.toast')
     <div class="front-image">
         <img src="{{ asset('front/images/indep.jpg')}}" alt="...">
     </div>
     <div class="body mt-2">
-        <!-- carousel cards -->
-        {{-- <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{ asset('front/images/nkrumah1.jpg')}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{{ asset('front/images/indep.jpg')}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{{ asset('front/images/site1.webp')}}" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-        </div> --}}
-        
 
         <!-- destination info cards starts-->
         <div class="body-cards">
-            <div class="card text-center mb-3 shadow-lg" style="width: 18rem;">
+            <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <i class="bi bi-alarm"></i>
                     <h5 class="card-title">Last minute trips</h5>
@@ -53,28 +30,28 @@
                 </div>
             </div>
               
-            <div class="card text-center mb-3 shadow-lg" style="width: 18rem;">
+            <div class="card text-center mb-3 " style="width: 18rem;">
                 <div class="card-body">
                     <i class="bi bi-geo-alt"></i>
                     <h5 class="card-title">Accra</h5>
                     <p class="card-text">Most popular destinations</p>
                 </div>
             </div>
-            <div class="card text-center mb-3 shadow-lg" style="width: 18rem;">
+            <div class="card text-center mb-3 " style="width: 18rem;">
                 <div class="card-body">
                     <i class="bi bi-geo-alt"></i>
                     <h5 class="card-title">Kumasi</h5>
                     <p class="card-text">Most popular destinations</p>
                 </div>
             </div>
-            <div class="card text-center mb-3 shadow-lg" style="width: 18rem;">
+            <div class="card text-center mb-3 " style="width: 18rem;">
                 <div class="card-body">
                     <i class="bi bi-geo-alt"></i>
                     <h5 class="card-title">Cape Coast</h5>
                     <p class="card-text">Most popular destinations</p>
                 </div>
             </div>        
-            <div class="card text-center mb-3 shadow-lg" style="width: 18rem;">
+            <div class="card text-center mb-3 " style="width: 18rem;">
                 <div class="card-body">
                     <i class="bi bi-geo-alt"></i>
                     <h5 class="card-title">Sekondi Takoradi</h5>
@@ -83,7 +60,7 @@
             </div>
         </div>
         <!-- destination info cards ends -->
-        <div class="statement row">
+        <div class="statement row mt-5">
             <div class="msg col-5">
                 <h5 class="mb-3">Do you want to go on a journey without hustling for ticket?
                     Relax, your bus-stop is just a click away.</h5>

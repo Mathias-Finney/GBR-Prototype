@@ -94,10 +94,30 @@
                         <a href="{{ route('all.payment') }}" class="nav-link">Payments</a> 
                     </li>
 
-                    {{-- Travels --}}
+                    {{-- Trip --}}
                     <li class="nav-item">
                         <a href="{{ route('all.trip') }}" class="nav-link">Trips</a> 
                     </li>
+                    
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item nav-category">TICKETS</li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+            <i class="link-icon" data-feather="life-buoy"></i>
+           
+            <span class="link-title">TICKETS</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="emails">
+                <ul class="nav sub-menu">
+                    {{-- tICKETS links --}}
+                    <li class="nav-item">
+                    <a href="{{ route('all.ticket') }}" class="nav-link">Tickets</a> 
+                    </li>
+                    
+                    
                     
                 </ul>
             </div>

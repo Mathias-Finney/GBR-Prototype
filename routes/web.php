@@ -56,6 +56,12 @@ Route::middleware('auth')->group(function () {
 
     //trip payment
     Route::post('/pay', [UserController::class, 'tripPayment'])->name('trip.pay');
+    
+    // all tickets
+    Route::get('/allTicktes', [UserController::class, 'allTickets'])->name('user.allTickets');
+    
+    // deleting tickets 
+    Route::get('/del/ticket/{id}', [UserController::class, 'DeleteTicket'])->name('user.deleteTicket');
 });
 // Admin group middleware
 Route::middleware(['auth', 'role:admin'])->group(function () {
@@ -163,6 +169,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/trip/{id}', 'DeleteTrip')->name('delete.trip');
     });
 
+    // Tickets Controller
     Route::controller(TicketController::class)->group(function () {
         Route::get('/all/tickets', 'AllTicket')->name('all.ticket');
         Route::get('/add/ticket', 'AddTicket')->name('add.ticket');
@@ -170,6 +177,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/ticket/{id}', 'EditTicket')->name('edit.ticket');
         Route::post('/update/ticket', 'UpdateTicket')->name('update.ticket');
         Route::get('/delete/ticket/{id}', 'DeleteTicket')->name('delete.ticket');
+        Route::get('/update/ticketStatus/{id}/{status}', 'UpdateTicketStatus')->name('update.ticketStatus');
     });
 });
 
