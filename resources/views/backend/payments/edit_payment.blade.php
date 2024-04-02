@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
   
-                    <h6 class="card-title">ADD PAYMENT</h6>
+                    <h6 class="card-title">EDIT PAYMENT</h6>
 
                     <form method="post" action="{{ route('update.payment')}}" class="forms-sample" enctype="multipart/form-data">
                         @csrf
@@ -39,9 +39,32 @@
                             <Select type="text" class="form-control @error('mobile_money_provider') is-invalid @enderror" 
                             name="mobile_money_provider">
                             <option value="">Select Mobile Money Provider</option>
-                            <option value="MTN">MTN MOMO</option>
-                            <option value="VODAFONE">VODAFONE CASH</option>
-                            <option value="AIRTEL-TIGO">AIRTEL-TIGO</option>
+                            <option value="mtn" 
+                                @if ($data->mobile_money_provider == "mtn" && old('mobile_money_provider') == "")
+                                    selected="selected"
+                                @endif
+                                @if (old('mobile_money_provider') == "mtn")
+                                    selected="selected"
+                                @endif
+
+                                
+                            >MTN MOMO</option>
+                            <option value="telecel"
+                            @if ($data->mobile_money_provider == "telecel" && old('mobile_money_provider') == "")
+                                    selected="selected"
+                                @endif
+                                @if (old('mobile_money_provider') == "telecel")
+                                    selected="selected"
+                                @endif
+                            >TELECEL CASH</option>
+                            <option value="at"
+                            @if ($data->mobile_money_provider == "at" && old('mobile_money_provider') == "")
+                                    selected="selected"
+                                @endif
+                                @if (old('mobile_money_provider') == "at")
+                                    selected="selected"
+                                @endif
+                            >at MONEY</option>
                            
                             </Select>
                             @error('mobile_money_provider')
@@ -63,9 +86,30 @@
                             <Select type="text" class="form-control @error('status') is-invalid @enderror" 
                             name="status">
                             <option value="">Select Status</option>
-                            <option value="Completed">Completed</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Failed">Failed</option>
+                            <option value="Completed"
+                            @if ($data->status == "Completed" && old('status') == "")
+                                    selected="selected"
+                                @endif
+                                @if (old('status') == "Completed")
+                                    selected="selected"
+                                @endif
+                            >Completed</option>
+                            <option value="Pending"
+                            @if ($data->status == "Pending" && old('status') == "")
+                                    selected="selected"
+                                @endif
+                                @if (old('status') == "Pending")
+                                    selected="selected"
+                                @endif
+                            >Pending</option>
+                            <option value="Failed"
+                            @if ($data->status == "Failed" && old('status') == "")
+                                    selected="selected"
+                                @endif
+                                @if (old('status') == "Failed")
+                                    selected="selected"
+                                @endif
+                            >Failed</option>
                            
                             </Select>
                             @error('status')
