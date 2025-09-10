@@ -170,7 +170,7 @@
         </div>
         
         <div class="register_form col-5 mb-5" style="margin-top: 40px;">
-            <form class="row g-3 ps-3 pe-3 shadow" action="{{ route('login') }}" method="POST" style="">
+            <form class="row g-3 ps-3 pe-3 shadow" action="{{ route('login') }}" method="POST" >
                 @csrf
                 <h1 class="text-primary mb-4 text-center">Login</h1>
                 <div class="col-md-12" style="text-align: left;">

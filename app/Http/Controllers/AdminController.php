@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redis;
+use App\Models\Payment;
 
 class AdminController extends Controller
 {
     
     public function AdminDashboard(){
-        return view('admin.index');
+
+        $ssql = "amount";
+        $totalAmount = Payment::get($ssql);
+        // $totalAmount = "44455";
+        return view('admin.index')->with('totalAmount', $totalAmount);
     }// END METHOD
 
     public function AdminLogin(){
